@@ -8,12 +8,20 @@
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:1087845212522:android:184175a836a02c1c",
+        "mobilesdk_app_id": "1:1087845212522:android:58ec3b4bbf004dea",
         "android_client_info": {
-          "package_name": "io.github.s188691"
+          "package_name": "io.guthub.escores"
         }
       },
       "oauth_client": [
+        {
+          "client_id": "1087845212522-14ucf6sh8gpq7kd4vkbpn40ia1v9ogkc.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "io.guthub.escores",
+            "certificate_hash": "b6dc621d3b300a07be565350927bafada84f9437"
+          }
+        },
         {
           "client_id": "1087845212522-jvjhjgbfkvkpipoq0cfr3shuq0bc2u2a.apps.googleusercontent.com",
           "client_type": 3
@@ -29,8 +37,13 @@
           "status": 1
         },
         "appinvite_service": {
-          "status": 1,
-          "other_platform_oauth_client": []
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1087845212522-jvjhjgbfkvkpipoq0cfr3shuq0bc2u2a.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
         },
         "ads_service": {
           "status": 2

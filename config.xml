@@ -25,7 +25,7 @@
     </platform>
     <universal-links>
         <host name="https://ry2x6.app.goo.gl" scheme="https" />
-        <host name="https://s188691.github.io/" scheme="https">
+        <host name="esports-login.firebaseapp.com" scheme="https">
             <path url="/__/auth/callback" />
         </host>
     </universal-links>
