@@ -34,27 +34,11 @@ module.exports = [
     ]
   },
   {
-    "id": "cordova-plugin-device.device",
-    "file": "plugins/cordova-plugin-device/www/device.js",
-    "pluginId": "cordova-plugin-device",
+    "id": "cordova-plugin-firebase.FirebasePlugin",
+    "file": "plugins/cordova-plugin-firebase/www/firebase.js",
+    "pluginId": "cordova-plugin-firebase",
     "clobbers": [
-      "device"
-    ]
-  },
-  {
-    "id": "cordova-plugin-dialogs.notification",
-    "file": "plugins/cordova-plugin-dialogs/www/notification.js",
-    "pluginId": "cordova-plugin-dialogs",
-    "merges": [
-      "navigator.notification"
-    ]
-  },
-  {
-    "id": "cordova-plugin-dialogs.notification_android",
-    "file": "plugins/cordova-plugin-dialogs/www/android/notification.js",
-    "pluginId": "cordova-plugin-dialogs",
-    "merges": [
-      "navigator.notification"
+      "FirebasePlugin"
     ]
   }
 ];
@@ -66,8 +50,7 @@ module.exports.metadata =
   "cordova-universal-links-plugin": "1.2.1",
   "cordova-plugin-browsertab": "0.2.0",
   "cordova-plugin-inappbrowser": "3.0.0",
-  "cordova-plugin-device": "1.1.7",
-  "cordova-plugin-dialogs": "1.3.4"
+  "cordova-plugin-firebase": "1.0.0"
 };
 // BOTTOM OF METADATA
 });

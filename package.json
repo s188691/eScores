@@ -1,6 +1,6 @@
 {
     "name": "io.github.s188691",
-    "displayName": "eSports",
+    "displayName": "eScores",
     "version": "1.0.0",
     "description": "A sample Apache Cordova application that responds to the deviceready event.",
     "main": "index.js",
@@ -25,7 +25,8 @@
             "cordova-plugin-buildinfo": {},
             "cordova-universal-links-plugin": {},
             "cordova-plugin-browsertab": {},
-            "cordova-plugin-inappbrowser": {}
+            "cordova-plugin-inappbrowser": {},
+            "cordova-plugin-firebase": {}
         },
         "platforms": [
             "android"

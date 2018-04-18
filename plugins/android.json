@@ -22,10 +22,7 @@
     "cordova-plugin-inappbrowser": {
       "PACKAGE_NAME": "io.github.s188691"
     },
-    "cordova-plugin-device": {
-      "PACKAGE_NAME": "io.github.s188691"
-    },
-    "cordova-plugin-dialogs": {
+    "cordova-plugin-firebase": {
       "PACKAGE_NAME": "io.github.s188691"
     }
   },
