@@ -4,4 +4,5 @@ function UserAction() {
     xhttp.setRequestHeader("Content-type", "application/json");
     xhttp.send();
     var response = JSON.parse(xhttp.responseText);
+	document.getElementById("liga").innerHTML = response;
 }
