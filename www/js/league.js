@@ -17,7 +17,7 @@ var btn = document.getElementById("btn");
 function dupa() {
 	
 var ourRequest = new XMLHttpRequest();
-	ourRequest.open('GET', https://api.pandascore.co/videogames/?token=psPK5jHHbwepozs5tpNXkthrjpsqJYjqRJaLGgdF6mgoQw1SX5g);
+	ourRequest.open('GET', "https://api.pandascore.co/videogames/?token=psPK5jHHbwepozs5tpNXkthrjpsqJYjqRJaLGgdF6mgoQw1SX5g");
 	ourRequest.onload = function() {
 		var ourData = JSON.parse(ourRequest.responseText);
 		renderHTML(ourData);
