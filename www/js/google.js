@@ -12,6 +12,7 @@ function google_login_in(){
 		  // Handle Errors here.
 		  var errorCode = error.code;
 		  var errorMessage = error.message;
+		  alert(errorMessage);
 		  // The email of the user's account used.
 		  var email = error.email;
 		  // The firebase.auth.AuthCredential type that was used.
@@ -32,6 +33,7 @@ firebase.auth().getRedirectResult().then(function(result) {
   // Handle Errors here.
   var errorCode = error.code;
   var errorMessage = error.message;
+  alert(errorMessage);
 });
 
 
