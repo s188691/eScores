@@ -1,5 +1,6 @@
 package org.apache.cordova.firebase;
 
+import com.google.firebase.FirebaseApp
 import android.app.PendingIntent;
 import android.content.BroadcastReceiver;
 import android.content.Context;
@@ -20,5 +21,6 @@ public class OnNotificationOpenReceiver extends BroadcastReceiver {
         FirebasePlugin.sendNotification(data);
         launchIntent.putExtras(data);
         context.startActivity(launchIntent);
+		FirebaseApp.initializeApp(this);
     }
 }

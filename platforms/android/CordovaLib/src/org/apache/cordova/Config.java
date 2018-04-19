@@ -20,7 +20,7 @@
 package org.apache.cordova;
 
 import java.util.List;
-
+import com.google.firebase.FirebaseApp
 import android.app.Activity;
 
 @Deprecated // Use Whitelist, CordovaPrefences, etc. directly.

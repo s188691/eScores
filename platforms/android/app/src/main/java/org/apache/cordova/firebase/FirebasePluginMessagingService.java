@@ -1,5 +1,5 @@
 package org.apache.cordova.firebase;
-
+import com.google.firebase.FirebaseApp
 import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.content.Context;
@@ -12,7 +12,7 @@ import android.util.Log;
 import android.app.Notification;
 import android.text.TextUtils;
 import android.content.ContentResolver;
-
+import com.google.firebase.FirebaseApp
 import com.google.firebase.messaging.FirebaseMessagingService;
 import com.google.firebase.messaging.RemoteMessage;
 
