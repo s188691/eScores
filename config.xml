@@ -18,6 +18,7 @@
     <allow-intent href="geo:*" />
     <platform name="android">
         <allow-intent href="market:*" />
+		<preference name="AndroidLaunchMode" value="singleTask" />
     </platform>
     <platform name="ios">
         <allow-intent href="itms:*" />
@@ -26,7 +27,7 @@
     <universal-links>
         <host name="https://ry2x6.app.goo.gl" scheme="https" />
         <host name="esports-login.firebaseapp.com" scheme="https">
-            <path url="/__/auth/callback" />
+        <path url="/__/auth/callback" />
         </host>
     </universal-links>
     <preference name="AndroidLaunchMode" value="singleTask" />
