@@ -14,7 +14,7 @@ var url = api + game + apiKey;
 var gameContainer = document.getElementById("over");
 var btn = document.getElementById("btn");
 
-btn.addEventListener("click", function() {
+function dupa() {
 	
 var ourRequest = new XMLHttpRequest();
 	ourRequest.open('GET', url);
@@ -24,13 +24,13 @@ var ourRequest = new XMLHttpRequest();
 		};
 	ourRequest.send();
 
-});
+};
 
 function renderHTML(data) {
 	var htmlString = "";
 	
 	for (i = 0; i < data.length; i++) {
-		htmlString += "<p>" + data[i].name + ".</p>";
+		htmlString += "<p>" + data[i].name + "</p>";
 	}
 	
 	gameContainer.insertAdjacentHTML('beforeend', htmlString);
