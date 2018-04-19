@@ -6,7 +6,12 @@
   <link rel="stylesheet" href="../css/mainstyle.css" />
   <script src="cordova.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
-    <script src="../js/p5.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jquerymobile/1.4.5/jquery.mobile.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquerymobile/1.4.5/jquery.mobile.min.js"></script>
+	<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+	<script src="../js/p5.js"></script>
     <script src="../js/p5.dom.js"></script>
     <script src="../ja/p5.sound.js"></script>
   
@@ -31,9 +36,9 @@
 	
 
 	<button type="submit" onclick="setup()">download data</button>
-	<button type="submit" onclick="gotData(data)">show data</button>
+	<button id="btn" type="submit" onclick="gotData(data)">show data</button>
 
-
+	<div id="over"></div>
 
   
   
