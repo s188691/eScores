@@ -27,11 +27,6 @@ var ourRequest = new XMLHttpRequest();
 };
 
 function renderHTML(data) {
-	var htmlString = "";
-	
-	for (i = 0; i < data.length; i++) {
-		htmlString += "<p>" + data[i].name + "</p>";
-	}
-	
+	var htmlString = "<p>" + data[i].name + "</p>";
 	gameContainer.insertAdjacentHTML('beforeend', htmlString);
 }
