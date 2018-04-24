@@ -72,7 +72,7 @@ function makeCorsRequest() {
   // Response handlers.
   xhr.onload = function() {
     var text = xhr.responseText;
-		//document.write(text);
+		document.write(text);
     var title = getTitle(text);
     alert('Response from CORS request to ' + url + ': ' + title);
   };
@@ -82,7 +82,7 @@ function makeCorsRequest() {
   };
 
   xhr.send();
-  document.write(text);
+
 }
 	
 </script>
