@@ -17,7 +17,7 @@
   
 </head>
 
-<body>
+<body onload="createCORSRequest(method, url)">
 	<script src="https://www.gstatic.com/firebasejs/4.12.1/firebase.js"></script>
 	<script>
 	// Initialize Firebase
@@ -88,6 +88,8 @@ function makeCorsRequest() {
 	
 </script>
 
+
+<button onload="createCORSRequest(method, url)">Click</button> 
 <button onclick="makeCorsRequest()">Click</button> 
 <p id="demo"></p>
 
