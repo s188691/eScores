@@ -71,8 +71,9 @@ function makeCorsRequest() {
 
   // Response handlers.
   xhr.onload = function() {
-    var text = xhr.responseText;
-		document.write(text);
+    var text = JSON.parse(xhr.responseText);
+		console.log(text[0]);
+    document.getElementById("demo").innerHTML = text;
     var title = getTitle(text);
     alert('Response from CORS request to ' + url + ': ' + title);
   };
@@ -86,8 +87,9 @@ function makeCorsRequest() {
 }
 	
 </script>
-  
-  
+
+<button onclick="makeCorsRequest()">Click</button> 
+<p id="demo"></p>
 
 	
  
