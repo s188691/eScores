@@ -11,22 +11,19 @@ var url = api + game + apiKey;
 //function gotData(data) {
 //	println(data);
 //}
-var gameContainer = document.getElementById("over");
-var btn = document.getElementById("btn");
+//var gameContainer = document.getElementById("over");
+//var btn = document.getElementById("btn");
+//
+//function dupa() {
+//	
+//var ourRequest = new XMLHttpRequest();
+//	ourRequest.open('GET', "https://api.pandascore.co/videogames/?token=psPK5jHHbwepozs5tpNXkthrjpsqJYjqRJaLGgdF6mgoQw1SX5g");
+//	ourRequest.onload = function() {
+//		var ourData = JSON.parse(ourRequest.responseText);
+//		renderHTML(ourData);
+//		};
+//	ourRequest.send();
 
-function dupa() {
-	
-var ourRequest = new XMLHttpRequest();
-	ourRequest.open('GET', "https://api.pandascore.co/videogames/?token=psPK5jHHbwepozs5tpNXkthrjpsqJYjqRJaLGgdF6mgoQw1SX5g");
-	ourRequest.onload = function() {
-		var ourData = JSON.parse(ourRequest.responseText);
-		renderHTML(ourData);
-		};
-	ourRequest.send();
+//};
 
-};
 
-function renderHTML(data) {
-	var htmlString = "<p>" + data[i].name + "</p>";
-	gameContainer.insertAdjacentHTML('beforeend', htmlString);
-}
