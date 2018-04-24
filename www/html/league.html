@@ -65,10 +65,10 @@ function makeCorsRequest() {
 
   // Response handlers.
   xhr.onload = function() {
-    var ourData = JSON.parse(text = xhr.responseText);
-	//renderHTML(ourData);
-    //alert('Response from CORS request to ' + url);
+  var ourData = JSON.parse(text = xhr.responseText);
+  //alert('Response from CORS request to ' + url);
 	console.log(ourData[0]);
+	document.getElementById("over").innerHTML = ourData[0];
   };
 
 
@@ -80,17 +80,12 @@ function makeCorsRequest() {
 
 }
 
-	function op()
-	{
-	document.getElementsById("over").innerHTML = ourData;
-	}
-
 	
 </script>
 
 
 <button onclick="makeCorsRequest()">Pobierz dane</button> 
-<button onclick="op()">Wyświetl dane</button> 
+
 <div id="over"></div>
 	
  
