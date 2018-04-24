@@ -3,7 +3,7 @@
   <meta http-equiv="Content-type" content="text/html; charset=utf-8">
   <title>eSports</title>
   <link href="https://fonts.googleapis.com/css?family=Nunito:400,600,700" rel="stylesheet">
-  <link rel="stylesheet" href="../css/mainstyle.css" />
+  <link rel="stylesheet" href="" />
   <script src="cordova.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -11,13 +11,11 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquerymobile/1.4.5/jquery.mobile.min.js"></script>
 	<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
-	<script src="../js/p5.js"></script>
-    <script src="../js/p5.dom.js"></script>
-    <script src="../ja/p5.sound.js"></script>
+
   
 </head>
 
-<body onload="createCORSRequest(method, url)">
+<body>
 	<script src="https://www.gstatic.com/firebasejs/4.12.1/firebase.js"></script>
 	<script>
 	// Initialize Firebase
@@ -68,9 +66,11 @@ function makeCorsRequest() {
   // Response handlers.
   xhr.onload = function() {
     var ourData = JSON.parse(text = xhr.responseText);
-	  console.log(ourData[0]);
+	//renderHTML(ourData);
     //alert('Response from CORS request to ' + url);
+	console.log(ourData[0]);
   };
+
 
   xhr.onerror = function() {
     alert('Woops, there was an error making the request.');
@@ -79,14 +79,19 @@ function makeCorsRequest() {
   xhr.send();
 
 }
+
+	function op()
+	{
+	document.getElementsById("over").innerHTML = ourData;
+	}
+
 	
 </script>
 
 
-<button onload="createCORSRequest(method, url)">Click</button> 
-<button onclick="makeCorsRequest()">Click</button> 
-<p id="demo"></p>
-
+<button onclick="makeCorsRequest()">Pobierz dane</button> 
+<button onclick="op()">Wyświetl dane</button> 
+<div id="over"></div>
 	
  
 
