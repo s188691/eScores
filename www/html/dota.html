@@ -1,0 +1,85 @@
+<html> </html><head>
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+    <title>eSports</title>
+    <link href="https://fonts.googleapis.com/css?family=Nunito:400,600,700" rel="stylesheet">
+    <link rel="stylesheet" href="../css/mainstyle.css" />
+    <script src="cordova.js"></script>
+      <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+      <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jquerymobile/1.4.5/jquery.mobile.min.css">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquerymobile/1.4.5/jquery.mobile.min.js"></script>
+      <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+      <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+      <script src="../js/p5.js"></script>
+      <script src="../js/p5.dom.js"></script>
+      <script src="../ja/p5.sound.js"></script>
+    
+  </head>
+<body>
+<script>
+function makeRequest(url, callback) {
+    var xhr = new XMLHttpRequest();
+    xhr.open('GET', url, true);
+    xhr.onreadystatechange = function () {
+        if (this.readyState === XMLHttpRequest.DONE) {
+            callback(this.responseText);
+        }
+    };
+    xhr.send();
+}
+
+// Get all users
+var url  = "http://localhost:8080/api/v1/users";
+var xhr  = new XMLHttpRequest()
+xhr.open('GET', url, true)
+xhr.onload = function () {
+	var users = JSON.parse(xhr.responseText);
+	if (xhr.readyState == 4 && xhr.status == "200") {
+		console.table(users);
+	} else {
+		console.error(users);
+	}
+}
+xhr.send(null);
+
+
+// Get a champ
+var url  = "http://localhost:8080/api/v1/users";
+var xhr  = new XMLHttpRequest()
+xhr.open('GET', url+'/1', true)
+xhr.onload = function () {
+	var users = JSON.parse(xhr.responseText);
+	if (xhr.readyState == 4 && xhr.status == "200") {
+		console.table(users);
+	} else {
+		console.error(users);
+	}
+}
+xhr.send(null);
+
+
+// update champs
+var url = "http://localhost:8080/api/v1/users";
+
+var data = {};
+data.firstname = "John";
+data.lastname  = "Snow";
+var json = JSON.stringify(data);
+
+var xhr = new XMLHttpRequest();
+xhr.open("POST", url, true);
+xhr.setRequestHeader('Content-type','application/json; charset=utf-8');
+xhr.onload = function () {
+	var users = JSON.parse(xhr.responseText);
+	if (xhr.readyState == 4 && xhr.status == "201") {
+		console.table(users);
+	} else {
+		console.error(users);
+	}
+}
+xhr.send(json);
+</script>
+
+<button onclick="dupa()">download data</button>
+</body>
+</html>
