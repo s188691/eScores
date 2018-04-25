@@ -15,20 +15,32 @@
   </head>
 <body>
 <script>
-function dupa() {
-var xhttp = new XMLHttpRequest();
-xhttp.onreadystatechange = function() {
-    if (this.readyState == 4 && this.status == 200) {
-       // Typical action to be performed when the document is ready:
-       document.getElementById("name").innerHTML = xhttp.responseText;
-    }
-};
-xhttp.open("GET", "https://api.pandascore.co/lol/champions.json?page=3&token=nUVNRZjIePl6nfZpsjtk_5FiVm-eDNNbZy4N8BovC0TIq6Y0kko", true);
-xhttp.send();
-
+function insertPosts(data) {
+    data.forEach(function(user) {
+        console.groupCollapsed(user.id + ' ' + user.name);
+        console.log(user);
+        console.groupEnd();
+    })
 }
+
+document.querySelector('#button').addEventListener('click', function() {
+    let xhr = new XMLHttpRequest();
+
+    //typ połączenia, url, czy asynchroniczen
+    xhr.open("GET", "https://api.pandascore.co/lol/champions.json?page=3&token=nUVNRZjIePl6nfZpsjtk_5FiVm-eDNNbZy4N8BovC0TIq6Y0kko", true);
+
+    xhr.addEventListener('load', function() {
+        if (this.status === 200) {
+            const users = JSON.parse(this.responseText);
+            insertPosts(users);
+        }
+    })
+
+    xhr.send();
+});
 </script>
-    <button onclick="dupa()"> pobierz champy </button>
+    <button id="button"> pobierz champy </button>
 	
 </body>
 </html>
+
