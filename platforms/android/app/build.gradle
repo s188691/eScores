@@ -1,3 +1,32 @@
+
+Skip to content
+This repository
+
+    Pull requests
+    Issues
+    Marketplace
+    Explore
+
+    @olkastepien
+
+0
+0
+
+    4
+
+olkastepien/eScores forked from s188691/eScores
+Code
+Pull requests 0
+Projects 0
+Wiki
+Insights
+Settings
+eScores/platforms/android/app/build.gradle
+529a6b4 a day ago
+@olkastepien olkastepien fbb
+@s188691
+@olkastepien
+342 lines (302 sloc) 12.2 KB
 /*
        Licensed to the Apache Software Foundation (ASF) under one
        or more contributor license agreements.  See the NOTICE file
@@ -6,9 +35,7 @@
        to you under the Apache License, Version 2.0 (the
        "License"); you may not use this file except in compliance
        with the License.  You may obtain a copy of the License at
-
          http://www.apache.org/licenses/LICENSE-2.0
-
        Unless required by applicable law or agreed to in writing,
        software distributed under the License is distributed on an
        "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
@@ -262,6 +289,7 @@ dependencies {
     implementation fileTree(dir: 'libs', include: '*.jar')
     // SUB-PROJECT DEPENDENCIES START
     implementation(project(path: ":CordovaLib"))
+    implementation 'com.facebook.android:facebook-android-sdk:[4,5)'
     compile "com.android.support:customtabs:23.3.0"
     compile "com.google.gms:google-services:+"
     compile "com.google.android.gms:play-services-tagmanager:+"
@@ -270,6 +298,12 @@ dependencies {
     compile "com.google.firebase:firebase-crash:+"
     compile "com.google.firebase:firebase-config:+"
     compile "com.google.firebase:firebase-perf:+"
+    compile "com.firebaseui:firebase-ui-auth:3.2.2"
+   
+
+    // Required only if Facebook login support is required
+    compile('com.facebook.android:facebook-android-sdk:4.27.0')
+
     // SUB-PROJECT DEPENDENCIES END
 }
 
@@ -332,3 +366,19 @@ for (def func : cdvPluginPostBuildExtras) {
 if (hasProperty('postBuildExtras')) {
     postBuildExtras()
 }
+
+    © 2018 GitHub, Inc.
+    Terms
+    Privacy
+    Security
+    Status
+    Help
+
+    Contact GitHub
+    API
+    Training
+    Shop
+    Blog
+    About
+
+Press h to open a hovercard with more details.
