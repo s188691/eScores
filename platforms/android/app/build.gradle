@@ -1,32 +1,3 @@
-
-Skip to content
-This repository
-
-    Pull requests
-    Issues
-    Marketplace
-    Explore
-
-    @olkastepien
-
-0
-0
-
-    4
-
-olkastepien/eScores forked from s188691/eScores
-Code
-Pull requests 0
-Projects 0
-Wiki
-Insights
-Settings
-eScores/platforms/android/app/build.gradle
-529a6b4 a day ago
-@olkastepien olkastepien fbb
-@s188691
-@olkastepien
-342 lines (302 sloc) 12.2 KB
 /*
        Licensed to the Apache Software Foundation (ASF) under one
        or more contributor license agreements.  See the NOTICE file
@@ -366,19 +337,3 @@ for (def func : cdvPluginPostBuildExtras) {
 if (hasProperty('postBuildExtras')) {
     postBuildExtras()
 }
-
-    © 2018 GitHub, Inc.
-    Terms
-    Privacy
-    Security
-    Status
-    Help
-
-    Contact GitHub
-    API
-    Training
-    Shop
-    Blog
-    About
-
-Press h to open a hovercard with more details.
