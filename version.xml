@@ -4,7 +4,7 @@
 	<system.webServer>
 	<httpProtocol>
      <customHeaders>
-       <add name="Access-Control-Allow-Origin" value="*" />
+       <add name="Access-Control-Allow-Origin" value="https://s188691.github.io" />
      </customHeaders>
 	</httpProtocol>
 	</system.webServer>
