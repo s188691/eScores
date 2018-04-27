@@ -1,0 +1,11 @@
+<?xml version="1.0" standalone="yes"?>
+<configuration>
+    <version>1</version>
+	<system.webServer>
+	<httpProtocol>
+     <customHeaders>
+       <add name="Access-Control-Allow-Origin" value="*" />
+     </customHeaders>
+	</httpProtocol>
+	</system.webServer>
+</configuration>
