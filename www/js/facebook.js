@@ -18,5 +18,22 @@ function facebook_login_in(){
 		  var credential = error.credential;
 		  // ...
 		});
-    }
 
+firebase.auth().getRedirectResult().then(function(result) {
+  if (result.credential) {
+   
+    var token = result.credential.accessToken;
+  
+    var user = result.user;
+  
+  }
+}).catch(function(error) {
+  // Handle Errors here.
+  var errorCode = error.code;
+  var errorMessage = error.message;
+  alert(errorMessage);
+});
+
+
+		
+}
