@@ -26,6 +26,10 @@
 	</script>
 <script src="https://apis.google.com/js/platform.js" async defer>
 </script>
+
+<div id="nazwa"></div>
+<div id="ligi"></div>
+
 <script>
 
 //GAMENAMES @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
@@ -41,164 +45,38 @@ function gotNames(data) {
 	var gamename = dotanames.gamename
 	var gametag = dotanames.gametag
 		console.log(gamename, gametag);
-		document.write("Nazwa gry: " + gamename + ". Tag gry: " + gametag + ".");
+		document.getElementById("nazwa").innerHTML = "Nazwa gry: " + gamename + ". Tag gry: " + gametag + ".";
 	}
 //LEAGUES@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-var ref = database.ref('videogame2/leagues/league1');
-ref.on('value', gotLeague1, errData);
-
-function gotLeague1(data) {
-
-	var dotaleague1 = data.val();
-	var keys = Object.keys(dotaleague1);
-	var leaguename1 = dotaleague1.leaguename
-	var leagueurl1 = dotaleague1.leagueurl
-		//console.log(leaguename, leagueurl);
-	}
-var ref = database.ref('videogame2/leagues/league2');
-ref.on('value', gotLeague2, errData);
-
-function gotLeague2(data) {
-
-	var dotaleague2 = data.val();
-	var keys = Object.keys(dotaleague2);
-	var leaguename2 = dotaleague2.leaguename
-	var leagueurl2 = dotaleague2.leagueurl
-		//console.log(leaguename, leagueurl);
-	}		
-var ref = database.ref('videogame2/leagues/league3');
-ref.on('value', gotLeague3, errData);
-
-function gotLeague3(data) {
-
-	var dotaleague3 = data.val();
-	var keys = Object.keys(dotaleague3);
-	var leaguename3 = dotaleague3.leaguename
-	var leagueurl3 = dotaleague3.leagueurl
-		//console.log(leaguename, leagueurl);
-	}
-var ref = database.ref('videogame2/leagues/league4');
-ref.on('value', gotLeague4, errData);
-
-function gotLeague4(data) {
-
-	var dotaleague4 = data.val();
-	var keys = Object.keys(dotaleague4);
-	var leaguename4 = dotaleague4.leaguename
-	var leagueurl4 = dotaleague4.leagueurl
-		//console.log(leaguename, leagueurl);
-	}
-var ref = database.ref('videogame2/leagues/league5');
-ref.on('value', gotLeague5, errData);
-
-function gotLeague5(data) {
-
-	var dotaleague5 = data.val();
-	var keys = Object.keys(dotaleague5);
-	var leaguename5 = dotaleague5.leaguename
-	var leagueurl5 = dotaleague5.leagueurl
-		//console.log(leaguename, leagueurl);
-	}
-var ref = database.ref('videogame2/leagues/league6');
-ref.on('value', gotLeague6, errData);
-
-function gotLeague6(data) {
-
-	var dotaleague6 = data.val();
-	var keys = Object.keys(dotaleague6);
-	var leaguename6 = dotaleague6.leaguename
-	var leagueurl6 = dotaleague6.leagueurl
-		//console.log(leaguename, leagueurl);
-	}
-var ref = database.ref('videogame2/leagues/league7');
-ref.on('value', gotLeague7, errData);
-
-function gotLeague7(data) {
-
-	var dotaleague7 = data.val();
-	var keys = Object.keys(dotaleague7);
-	var leaguename7 = dotaleague7.leaguename
-	var leagueurl7 = dotaleague7.leagueurl
-		//console.log(leaguename, leagueurl);
-	}
-var ref = database.ref('videogame2/leagues/league8');
-ref.on('value', gotLeague8, errData);
-
-function gotLeague8(data) {
-
-	var dotaleague8 = data.val();
-	var keys = Object.keys(dotaleague8);
-	var leaguename8 = dotaleague8.leaguename
-	var leagueurl8 = dotaleague8.leagueurl
-		//console.log(leaguename, leagueurl);
-	}
-var ref = database.ref('videogame2/leagues/league9');
-ref.on('value', gotLeague9, errData);
-
-function gotLeague9(data) {
-
-	var dotaleague9 = data.val();
-	var keys = Object.keys(dotaleague9);
-	var leaguename9 = dotaleague9.leaguename
-	var leagueurl9 = dotaleague9.leagueurl
-		//console.log(leaguename, leagueurl);
-	}
-var ref = database.ref('videogame2/leagues/league10');
-ref.on('value', gotLeague10, errData);
-
-function gotLeague10(data) {
-
-	var dotaleague10 = data.val();
-	var keys = Object.keys(dotaleague10);
-	var leaguename10 = dotaleague10.leaguename
-	var leagueurl10 = dotaleague10.leagueurl
-		//console.log(leaguename, leagueurl);
-	}
-var ref = database.ref('videogame2/leagues/league11');
-ref.on('value', gotLeague11, errData);
-
-function gotLeague11(data) {
-
-	var dotaleague11 = data.val();
-	var keys = Object.keys(dotaleague11);
-	var leaguename11 = dotaleague11.leaguename
-	var leagueurl11 = dotaleague11.leagueurl
-		//console.log(leaguename, leagueurl);
-	}
-var ref = database.ref('videogame2/leagues/league12');
-ref.on('value', gotLeague12, errData);
-
-function gotLeague12(data) {
-
-	var dotaleague12 = data.val();
-	var keys = Object.keys(dotaleague12);
-	var leaguename12 = dotaleague12.leaguename
-	var leagueurl12 = dotaleague12.leagueurl
-		//console.log(leaguename, leagueurl);
-	}
+ 
+var allinfo = [];
+               
+function gotLeague(data) {
+ 
+    var dotaleague = data.val();
+    var keys = Object.keys(dotaleague);
+    var leaguename = dotaleague.leaguename;
+    var leagueurl = dotaleague.leagueurl;
+    allinfo.push(leaguename);
+    allinfo.push(leagueurl);
 	
 	
-	//console.log(data.val());
-	//var nazwa = data.val();
-	//console.log(keys);
-	//for (var i = 0; i < keys.length; i++) {
-	//var k = keys[i];
-	//var gamename = scores[k].gamename;
-	//var gametag = scores[k].gametag;
-	//var leagues = scores[k].leagues;
-	//var teams = scores[k].teams;
-	//console.log(gamename, gametag, leagues, teams);
-	//}
-
-
-function errData(err) {
-	console.log('Error!');
-	console.log(err);
+	//console.log(allinfo);
+	//console.log(allinfo[0]);
+	document.getElementById("ligi").innerHTML = allinfo;
 }
-
-
-
+ 
+for (var leaguenumber = 1; leaguenumber < 11; leaguenumber++) {
+    database.ref('videogame2/leagues/league' + leaguenumber).on('value', gotLeague, errData);
+}
+ 
+function errData(err) {
+    console.log('Error!');
+    console.log(err);
+}
 </script>
+
+
 
 </body>
 </html>
