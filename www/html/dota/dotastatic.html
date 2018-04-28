@@ -27,8 +27,27 @@
 <script src="https://apis.google.com/js/platform.js" async defer>
 </script>
 
-<div id="nazwa"></div>
-<div id="ligi"></div>
+<div><p>Nazwa gry oraz jej tag:</p></div>
+<div id="nazwa"></div></br>
+<div><p>Ligi gry wraz z odnośnikami do stron ligowych</p></div>
+<div id="liga1"></div>
+<div id="liga2"></div>
+<div id="liga3"></div>
+<div id="liga4"></div>
+<div id="liga5"></div>
+<div id="liga6"></div>
+<div id="liga7"></div>
+<div id="liga8"></div>
+<div id="liga9"></div>
+<div id="liga10"></div>
+<div id="liga11"></div>
+<div id="liga12"></div></br>
+<div><p>Drużyny wraz z ich graczami</p></div>
+<div id="team0"></div>
+<div id="team1"></div>
+<div id="team2"></div>
+<div id="team3"></div>
+<!-- <div id="graczeteam0"></div></br> -->
 
 <script>
 
@@ -44,12 +63,12 @@ function gotNames(data) {
 	var keys = Object.keys(dotanames);
 	var gamename = dotanames.gamename
 	var gametag = dotanames.gametag
-		console.log(gamename, gametag);
-		document.getElementById("nazwa").innerHTML = "Nazwa gry: " + gamename + ". Tag gry: " + gametag + ".";
+		//console.log(gamename, gametag);
+		document.getElementById("nazwa").innerHTML = gamename + ". " + gametag + ".";
 	}
 //LEAGUES@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
  
-var allinfo = [];
+var leagues = [];
                
 function gotLeague(data) {
  
@@ -57,19 +76,82 @@ function gotLeague(data) {
     var keys = Object.keys(dotaleague);
     var leaguename = dotaleague.leaguename;
     var leagueurl = dotaleague.leagueurl;
-    allinfo.push(leaguename);
-    allinfo.push(leagueurl);
+    leagues.push(leaguename);
+    leagues.push(leagueurl);
 	
 	
-	//console.log(allinfo);
-	//console.log(allinfo[0]);
-	document.getElementById("ligi").innerHTML = allinfo;
+	//console.log(leagues);
+	//console.log(leagues[0]);
+	//document.getElementById("ligi").innerHTML = leagues;
+	document.getElementById("liga1").innerHTML = "Nazwa ligi: " + leagues[0] + ". Url: " + leagues[1] + ".";
+	document.getElementById("liga2").innerHTML = "Nazwa ligi: " + leagues[2] + ". Url: " + leagues[3] + ".";
+	document.getElementById("liga3").innerHTML = "Nazwa ligi: " + leagues[4] + ". Url: " + leagues[5] + ".";
+	document.getElementById("liga4").innerHTML = "Nazwa ligi: " + leagues[6] + ". Url: " + leagues[7] + ".";
+	document.getElementById("liga5").innerHTML = "Nazwa ligi: " + leagues[8] + ". Url: " + leagues[9] + ".";
+	document.getElementById("liga6").innerHTML = "Nazwa ligi: " + leagues[10] + ". Url: " + leagues[11] + ".";
+	document.getElementById("liga7").innerHTML = "Nazwa ligi: " + leagues[12] + ". Url: " + leagues[13] + ".";
+	document.getElementById("liga8").innerHTML = "Nazwa ligi: " + leagues[14] + ". Url: " + leagues[15] + ".";
+	document.getElementById("liga9").innerHTML = "Nazwa ligi: " + leagues[16] + ". Url: " + leagues[17] + ".";
+	document.getElementById("liga10").innerHTML = "Nazwa ligi: " + leagues[18] + ". Url: " + leagues[19] + ".";
+	document.getElementById("liga11").innerHTML = "Nazwa ligi: " + leagues[20] + ". Url: " + leagues[21] + ".";
+	document.getElementById("liga12").innerHTML = "Nazwa ligi: " + leagues[22] + ". Url: " + leagues[23] + ".";
 }
  
-for (var leaguenumber = 1; leaguenumber < 11; leaguenumber++) {
+for (var leaguenumber = 1; leaguenumber < 13; leaguenumber++) {
     database.ref('videogame2/leagues/league' + leaguenumber).on('value', gotLeague, errData);
 }
- 
+
+//TEAMS@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+
+var teams = [];
+               
+function gotTeam(data) {
+				
+	var dotateam = data.val();
+	var keys = Object.keys(dotateam);
+	var teamname = dotateam.name;
+	var teamacronym = dotateam.acronym;
+	teams.push(teamname);
+	teams.push(teamacronym);
+				   
+				   
+	//console.log(teams);
+	//console.log(teams[0]);
+	//document.getElementById("teamy").innerHTML = teams;
+	//for (var k = 0; k < 50; k+2) {
+	//document.getElementById("team" + k).innerHTML = "Nazwa drużyny: " + teams[k] + ". Akronim: " + teams[k+1] + ".";
+	//document.getElementById("team0").innerHTML = "Nazwa drużyny: " + teams[0] + ". Akronim: " + teams[1] + ".";
+	//}
+	}			
+	for (var teamnumber = 0; teamnumber < 50; teamnumber++) {
+		database.ref('videogame2/teams/' + teamnumber).on('value', gotTeam, errData);
+		}
+
+//PLAYERS@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+
+var playersteam0 = [];
+               
+	function gotPlayers(data) {
+							   
+		var dotaplayers = data.val();
+		var keys = Object.keys(dotaplayers);
+		var playername = dotaplayers.name;
+		playersteam0.push(playername);
+		
+								  
+								  
+		//console.log(playersteam0);
+		//console.log(teams[0]);
+		//document.getElementById("teamy").innerHTML = teams;
+		document.getElementById("graczeteam0").innerHTML = "Gracze drużyny: " + playersteam0[0] + ", " + playersteam0[1] + ", " + playersteam0[2] + ", " + playersteam0[3] + ", " + playersteam0[5] + ".";
+		}
+							   
+		for (var playernumber = 0; playernumber < 5; playernumber++) {
+			database.ref('videogame2/teams/0/players/' + playernumber).on('value', gotPlayers, errData);
+			}
+
+
+//ERRORS@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 function errData(err) {
     console.log('Error!');
     console.log(err);
