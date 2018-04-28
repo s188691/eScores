@@ -49,7 +49,7 @@ function gotNames(data) {
 	}
 //LEAGUES@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
  
-var allinfo = [];
+var leagues = [];
                
 function gotLeague(data) {
  
@@ -57,19 +57,23 @@ function gotLeague(data) {
     var keys = Object.keys(dotaleague);
     var leaguename = dotaleague.leaguename;
     var leagueurl = dotaleague.leagueurl;
-    allinfo.push(leaguename);
-    allinfo.push(leagueurl);
+    leagues.push(leaguename);
+    leagues.push(leagueurl);
 	
 	
-	//console.log(allinfo);
-	//console.log(allinfo[0]);
-	document.getElementById("ligi").innerHTML = allinfo;
+	//console.log(leagues);
+	//console.log(leagues[0]);
+	document.getElementById("ligi").innerHTML = leagues;
 }
  
 for (var leaguenumber = 1; leaguenumber < 11; leaguenumber++) {
     database.ref('videogame2/leagues/league' + leaguenumber).on('value', gotLeague, errData);
 }
- 
+
+//TEAMS@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+
+
+
 function errData(err) {
     console.log('Error!');
     console.log(err);
