@@ -53,8 +53,8 @@ input, button {
 }
 
 .main-div button, .loggedin-div button {
-  background: #5d8ffc;
-  color: #fff;
+  background: transparent !important;
+  color: black;
   border: 1px solid #5d8ffc;
   border-radius: 5px;
   padding: 15px;
