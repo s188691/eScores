@@ -57,7 +57,7 @@ input, button {
   color: black;
   border: 1px solid #5d8ffc;
   border-radius: 5px;
-  padding: 15px;
+  padding: 15px, 28px;
   display: block;
   width: 100%;
   transition: 0.3s;
