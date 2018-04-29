@@ -73,7 +73,7 @@ input, button {
   color: #fff;
   border: 1px solid red;
   border-radius: 5px;
-  padding: 15px;
+  padding: 15px, 30px;
   display: block;
   width: 100%;
   transition: 0.3s;
