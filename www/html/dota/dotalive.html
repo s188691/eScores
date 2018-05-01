@@ -1,0 +1,169 @@
+<html>
+<head>
+  <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+  <title>eSports</title>
+  <link href="https://fonts.googleapis.com/css?family=Nunito:400,600,700" rel="stylesheet">
+  <link rel="stylesheet" href="" />
+  <script src="cordova.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jquerymobile/1.4.5/jquery.mobile.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquerymobile/1.4.5/jquery.mobile.min.js"></script>
+	<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+
+  
+</head>
+
+<body>
+	<script src="https://www.gstatic.com/firebasejs/4.12.1/firebase.js"></script>
+	<script>
+	// Initialize Firebase
+	var config = {
+		apiKey: "AIzaSyDXKUmcnFU1EffDQs1x2Msict-YhZB37W8",
+		authDomain: "esports-login.firebaseapp.com",
+		databaseURL: "https://esports-login.firebaseio.com",
+		projectId: "esports-login",
+		storageBucket: "esports-login.appspot.com",
+		messagingSenderId: "1087845212522"
+	};
+	firebase.initializeApp(config);
+    </script>
+	<script src="https://apis.google.com/js/platform.js" async defer></script>
+	<script src="../js/league.js"></script>
+	
+
+<script>
+	// Create the XHR object.
+function createCORSRequest(method, url) {
+  var xhr = new XMLHttpRequest();
+  if ("withCredentials" in xhr) {
+    // XHR for Chrome/Firefox/Opera/Safari.
+    xhr.open(method, url, true);
+  } else if (typeof XDomainRequest != "undefined") {
+    // XDomainRequest for IE.
+    xhr = new XDomainRequest();
+    xhr.open(method, url);
+  } else {
+    // CORS not supported.
+    xhr = null;
+  }
+  return xhr;
+}
+
+
+// Make the actual CORS request.
+function makeCorsRequest() {
+  // This is a sample server that supports CORS.
+  var url = 'https://api.pandascore.co/dota2/matches/upcoming?token=psPK5jHHbwepozs5tpNXkthrjpsqJYjqRJaLGgdF6mgoQw1SX5g';
+
+  var xhr = createCORSRequest('GET', url);
+  if (!xhr) {
+    alert('CORS not supported');
+    return;
+  }
+
+  // Response handlers.
+  xhr.onload = function() {
+  var ourData = JSON.parse(text = xhr.responseText);
+  //alert('Response from CORS request to ' + url);
+	console.log(ourData);
+	
+	for ( var numergry = 0; numergry < 10; numergry++) {
+	document.getElementById("gamename" + numergry).innerHTML = ourData[numergry].name;
+	document.getElementById("begin_at" + numergry).innerHTML = ourData[numergry].begin_at;
+	document.getElementById("number_of_games" + numergry).innerHTML = ourData[numergry].number_of_games;
+	document.getElementById("league" + numergry).innerHTML = ourData[numergry].league.name;
+	document.getElementById("serie" + numergry).innerHTML = ourData[numergry].serie.full_name;
+	//document.getElementById("winner" + numergry).innerHTML = ourData[numergry].winner.name;
+	}
+	
+	
+  };
+
+
+  xhr.onerror = function() {
+    alert('Woops, there was an error making the request.');
+  };
+
+  xhr.send();
+
+}
+
+	
+</script>
+
+
+<button onclick="makeCorsRequest()">Pobierz zestawienie nadchodzących gier</button> 
+
+<div id="gamename0"></div>
+<div id="begin_at0"></div>
+<div id="number_of_games0"></div>
+<div id="league0"></div>
+<div id="serie0"></div></br>
+
+<div id="gamename1"></div>
+<div id="begin_at1"></div>
+<div id="number_of_games1"></div>
+<div id="league1"></div>
+<div id="serie1"></div></br>
+
+<div id="gamename2"></div>
+<div id="begin_at2"></div>
+<div id="number_of_games2"></div>
+<div id="league2"></div>
+<div id="serie2"></div></br>
+
+<div id="gamename3"></div>
+<div id="begin_at3"></div>
+<div id="number_of_games3"></div>
+<div id="league3"></div>
+<div id="serie3"></div></br>
+
+<div id="gamename4"></div>
+<div id="begin_at4"></div>
+<div id="number_of_games4"></div>
+<div id="league4"></div>
+<div id="serie4"></div></br>
+
+<div id="gamename5"></div>
+<div id="begin_at5"></div>
+<div id="number_of_games5"></div>
+<div id="league5"></div>
+<div id="serie5"></div></br>
+
+<div id="gamename6"></div>
+<div id="begin_at6"></div>
+<div id="number_of_games6"></div>
+<div id="league6"></div>
+<div id="serie6"></div></br>
+
+<div id="gamename7"></div>
+<div id="begin_at7"></div>
+<div id="number_of_games7"></div>
+<div id="league7"></div>
+<div id="serie7"></div></br>
+
+<div id="gamename8"></div>
+<div id="begin_at8"></div>
+<div id="number_of_games8"></div>
+<div id="league8"></div>
+<div id="serie8"></div></br>
+
+<div id="gamename9"></div>
+<div id="begin_at9"></div>
+<div id="number_of_games9"></div>
+<div id="league9"></div>
+<div id="serie9"></div></br>
+
+<div id="gamename10"></div>
+<div id="begin_at10"></div>
+<div id="number_of_games10"></div>
+<div id="league10"></div>
+<div id="serie10"></div></br>
+
+	
+ 
+
+</body>
+</html>
