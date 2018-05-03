@@ -1,10 +1,26 @@
 <html>
 <head>
-  <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-type" content="text/html;">
   <title>eSports</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
   <link href="https://fonts.googleapis.com/css?family=Nunito:400,600,700" rel="stylesheet">
-  <link rel="stylesheet" href="../css/mainstyle.css" />
+  <link rel="stylesheet" href="../css/style.css" />
+  <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase.js"></script>
+  <script src="../js/pgb.js"></script>
   <script src="cordova.js"></script>
+  
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+ 
+
+
+<script src="../js/bootstrap.js"></script>
+<script src="../js/angular.min.js"></script>
+
+ 
 </head>
 
 <body>
@@ -22,29 +38,37 @@
 	firebase.initializeApp(config);
     </script>
 	<script src="https://apis.google.com/js/platform.js" async defer></script>
-	<script src="js/login.js"></script>
-	<script src="js/google.js"></script>
-	<script src="js/facebook.js"></script>
- 
+	<script src="../js/auth.js"></script>
+	<script src="../js/login.js"></script>
+	<div class="btn-group">
+	<button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    =
+	</button>
+	<div class="dropdown-menu dropdown-menu-right">
+    <a class="dropdown-item" href="userprofile.html">User profile</a>
+	<button class="dropdown-item" type="button" onclick="logout()">Logout</button>
+	</div>
+	</div>
 
 	<header>
 			<div data-role="page" id="main">
 				<div data-role="header" id="header">
-					<h1>Header</h1>
+					<h1></h1>
 				</div>
 			</header>
 						<div allign="center">
-						<a allign="left" href="leaguemain.html"><img src="../www/img/lolimage.jpg" border="1" alt="tekst alternatywny" width="300px" height="300px" /></a>
-						<a align="center" href="dotamain.html"><img src="../www/img/dotaimage.jpg" border="1" alt="tekst alternatywny" width="300px" height="300px" /></a>
-						<a align="right" href="overmain.html"><img src="../www/img/owimage.jpg" border="1" alt="tekst alternatywny" width="300px" height="300px" /></a>          
+						<a allign="left" href="leaguemain.html"><img src="../img/lolimage.jpg" border="1" alt="tekst alternatywny" width="300px" height="300px" /></a>
+						<a align="center" href="dotamain.html"><img src="../img/dotaimage.jpg" border="1" alt="tekst alternatywny" width="300px" height="300px" /></a>
+						<a align="right" href="overmain.html"><img src="../img/owimage.jpg" border="1" alt="tekst alternatywny" width="300px" height="300px" /></a>          
 					</div>
 			  
 	
 	
 	
 				<div>
-					<h1>Footer</h1>
+					<h1></h1>
 				</div>
+				
 
 </body>
 </html>
