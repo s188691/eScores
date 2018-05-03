@@ -1,46 +1,160 @@
-<!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-type" content="text/html;">
   <title>eSports</title>
-  <link rel="stylesheet" href="../../css/bootstrap.css" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
   <link href="https://fonts.googleapis.com/css?family=Nunito:400,600,700" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="/www/css/style.css" />
+  <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase.js"></script>
+  <script src="/www/js/pgb.js"></script>
+  <script src="/www/cordova.js"></script>
   
-    <script src="../../js/angular.min.js"></script>
-    <script src="../../js/jquery.min.js"></script>
-	<script src="../../js/jquery.mobile.min.js"></script>
-	<script src="../../js/jquery-ui.min.js"></script>
-	<script src="../../js/bootstrap.js"></script>
-	
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+ 
+
+
+<script src="../../js/bootstrap.js"></script>
+<script src="../../js/angular.min.js"></script>
+
+
 </head>
 <body>
 <script>
-$(document).ready(function() {
-    //feed to parse
-    var feed = "https://news.google.com/news/rss/search/section/q/dota%202/dota%202?hl=en&gl=US&ned=us";
-    
-    $.ajax(feed, {
-        accepts:{
-            xml:"application/rss+xml"
-        },
-        dataType:"xml",
-        success:function(data) {
-            //Credit: http://stackoverflow.com/questions/10943544/how-to-parse-an-rss-feed-using-javascript
-
-            $(data).find("item").each(function () { // or "item" or whatever suits your feed
-                var el = $(this);
-                console.log("------------------------");
-                console.log("title      : " + el.find("title").text());
-                console.log("link       : " + el.find("link").text());
-                console.log("description: " + el.find("description").text());
-            });
-    
-
-        }   
-    });
-    
-});
+	  // Initialize Firebase
+	  var config = {
+		apiKey: "AIzaSyDXKUmcnFU1EffDQs1x2Msict-YhZB37W8",
+		authDomain: "esports-login.firebaseapp.com",
+		databaseURL: "https://esports-login.firebaseio.com",
+		projectId: "esports-login",
+		storageBucket: "esports-login.appspot.com",
+		messagingSenderId: "1087845212522"
+	  };
+	  firebase.initializeApp(config);
+	  console.log(firebase);
+	</script>
+<script src="https://apis.google.com/js/platform.js" async defer>
 </script>
+<script src="../../js/auth.js"></script>
+	<script src="../../js/login.js"></script>
+	<div class="btn-group">
+	<button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    =
+	</button>
+	<div class="dropdown-menu dropdown-menu-right">
+    <a class="dropdown-item" href="../userprofile.html">User profile</a>
+	<button class="dropdown-item" type="button" onclick="logout()">Logout</button>
+	</div>
+	</div>
+
+
+
+<script>
+//$(document).ready(function() {
+//    //feed to parse
+//    var feed = "https://news.google.com/news/rss/search/section/q/dota%202/dota%202?hl=en&gl=US&ned=us";
+//    
+//    $.ajax(feed, {
+//        accepts:{
+//            xml:"application/rss+xml"
+//        },
+//        dataType:"xml",
+//        success:function(data) {
+//            //Credit: http://stackoverflow.com/questions/10943544/how-to-parse-an-rss-feed-using-javascript
+//
+//            $(data).find("item").each(function () { // or "item" or whatever suits your feed
+//                var el = $(this);
+//                console.log("------------------------");
+//                console.log("title      : " + el.find("title").text());
+//                console.log("link       : " + el.find("link").text());
+//                console.log("description: " + el.find("description").text());
+//            });
+//    
+//
+//       }   
+//    });
+//    
+//});
+
+
+	// Create the XHR object.
+function createCORSRequest(method, url) {
+  var xhr = new XMLHttpRequest();
+  if ("withCredentials" in xhr) {
+    // XHR for Chrome/Firefox/Opera/Safari.
+    xhr.open(method, url, true);
+  } else if (typeof XDomainRequest != "undefined") {
+    // XDomainRequest for IE.
+    xhr = new XDomainRequest();
+    xhr.open(method, url);
+  } else {
+    // CORS not supported.
+    xhr = null;
+  }
+  return xhr;
+}
+
+
+	// Make the actual CORS request.
+	function downloadupcoming() {
+	// This is a sample server that supports CORS.
+	var url = 'http://localhost:8888/www/html/dota/dotaxml.xml';
+
+	var xhr = createCORSRequest('GET', url);
+	if (!xhr) {
+		alert('CORS not supported');
+		return;
+	}
+
+  // Response handlers.
+  xhr.onload = function() {
+  var ourData = text = xhr.responseText;
+  //alert('Response from CORS request to ' + url);
+  //console.log(ourData.name);
+  //document.getElementById("news").innerHTML = ourData.name;
+	
+	$(ourData).find("item").each(function () { // or "item" or whatever suits your feed
+                var el = $(this);
+				
+				for ( var numernews = 0; numernews < 9; numernews++) {
+                //console.log("------------------------");
+                document.getElementById("newstitle" + numernews).innerHTML = ("title      : " + el.find("title").text());
+                document.getElementById("newslink" + numernews).innerHTML =("link       : " + el.find("link").text());
+                document.getElementById("newsdesc" + numernews).innerHTML =("description: " + el.find("description").text());
+				}
+           });
+	
+	
+	
+}
+
+  xhr.onerror = function() {
+    alert('Woops, there was an error making the request.');
+  };
+
+  xhr.send();
+
+};
+	
+
+</script>
+
+<button type="button" class="btn btn-secondary" onclick="downloadupcoming()">Newsy</button>
+
+<div id="newstitle0"></div>
+<div id="newslink0"></div>
+<div id="newsdesc0"></div></br>
+
+<div id="newstitle1"></div>
+<div id="newslink1"></div>
+<div id="newsdesc1"></div></br>
+
+<div id="newstitle2"></div>
+<div id="newslink2"></div>
+<div id="newsdesc2"></div></br>
+
 </body>
 </html>
