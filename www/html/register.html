@@ -39,6 +39,28 @@
     messagingSenderId: "1087845212522"
   };
   firebase.initializeApp(config);
+</script>
+
+
+<div id="signup_div" class="main-div">
+  <h3>Register new eSports Account</h3>
+  <input type="email" placeholder="Email..." id="email_register" />
+  <input type="password" placeholder="Password..." id="password_register" />
+
+  <button onclick="register()">Register new Account</button></br>
+<button onclick="window.location.href='../index.html'">Back to login page</button>
+
+</div>
+
+<div id="alreadysigned_div" class="main-div">
+  <h3>You are already signed in :)</h3>
+
+<button onclick="window.location.href='../index.html'">Back to login page</button>
+
+</div>
+
+
+<script src="../js/register.js"></script>
 
 
 </body>
