@@ -24,6 +24,7 @@
 </head>
 <body>
 
+
   <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase.js"></script>
 	<script>
 	  // Initialize Firebase
@@ -46,7 +47,8 @@
 
 <header>
 
-  eScores
+ <img src="../www/img/login.gif" alt="Tu podaj tekst alternatywny" />
+  
 
 </header>
 
@@ -73,6 +75,11 @@
   <button  onclick="window.location.href='html/main01.html'" href="#" class="button"><span>✓</span>Test</button></br>
   </div>
 
+  <div id="login_div" >  
+	<button onclick="google_login_in()" class="loginBtn loginBtn--google">Login using Google</button></br>
+	<button onclick="facebook_login_in()" class="loginBtn loginBtn--facebook">Login using Facebook</button></br>
+	</div> 
+	
   <div id="user_div" class="loggedin-div">
     <h3>Welcome User</h3>
     <p id="user_para">Welcome to eSports!. You're currently logged in.</p>

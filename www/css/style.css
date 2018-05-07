@@ -31,6 +31,7 @@ input, button {
   margin-top: 150px;
   padding: 20px;
   display: none;
+  background: linear-gradient( #d0d6e5, #162342);
 }
 
 .main-div input {
@@ -38,6 +39,7 @@ input, button {
     padding: 12px;
     margin: 8px 0;
     box-sizing: border-box;
+	
 }
 
 .main-div input:focus {
