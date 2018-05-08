@@ -48,35 +48,24 @@
 
 
 
-
-<header>
-
-  eScores
-
-</header>
-
-
-
-
 <br>
 <br>
   <div id="login_div" class="main-div">
     <div>
-      <input type="email" placeholder="Email..." id="email_field" />
+      <input type="email" placeholder="example@email.com" id="email_field" />
     </div>
   
     <div>
-    <input type="password" placeholder="Password..." id="password_field" /><br><br>
+    <input type="password" placeholder="password" id="password_field" /><br><br>
     </div>
-
-
-   
   <button  onclick="login()"  href="#" class="button"><span>✓</span>Login to Account</button></br>
-	<button  onclick="window.location.href='html/register.html'" href="#" class="button"><span>✓</span>Register new Account</button></br>
-	<button  onclick="google_login_in()" href="#" class="button"><span>✓</span>Login using Google</button></br>
-  <button  onclick="facebook_login_in()" href="#" class="button"><span>✓</span>Login using Facebook</button></br>
+  <button  onclick="window.location.href='html/register.html'" href="#" class="button"><span>✓</span>Register new Account</button></br>
   <button  onclick="window.location.href='html/main01.html'" href="#" class="button"><span>✓</span>Test</button></br>
   </div>
+<div id="login_div" >  
+	<button onclick="google_login_in()" class="loginBtn loginBtn--google">Login using Google</button></br>
+	<button onclick="facebook_login_in()" class="loginBtn loginBtn--facebook">Login using Facebook</button></br>
+</div>
 
   <div id="user_div" class="loggedin-div">
     <h3>Welcome User</h3>
