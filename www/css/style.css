@@ -45,16 +45,11 @@ input, button {
 }
 
 .main-div button, .loggedin-div button {
-  background: #5d8ffc;
-  color: #fff;
+  background: transparent !important;
+  color: black;
   border: 1px solid #5d8ffc;
   border-radius: 5px;
-  padding: 40px;
-  display: block;
-  width: 100%;
-  transition: 0.3s;
-  -webkit-transition: 0.3s;
-  -moz-transition: 0.3s;
+padding: 40px, 20px;
 }
 
 .main-div button:hover, .loggedin-div button:hover {
@@ -65,16 +60,11 @@ input, button {
 }
 
 .main-div button, .signup-div button {
-  background: #5d8ffc;
-  color: #fff;
+  background: transparent !important;
+  color: black;
   border: 1px solid #5d8ffc;
   border-radius: 5px;
-  padding: 15px;
-  display: block;
-  width: 100%;
-  transition: 0.3s;
-  -webkit-transition: 0.3s;
-  -moz-transition: 0.3s;
+padding: 40px, 20px;
 }
 
 .main-div button:hover, .signup-div button:hover {
