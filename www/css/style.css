@@ -14,7 +14,7 @@ div {
 }
 
 body {
-  background: #EEEEEE;
+  background: linear-gradient(to bottom, #EEEEEE 0%, white 100%);
   padding: 0px;
   margin: 0px;
   font-family: 'Nunito', sans-serif;
