@@ -11,6 +11,7 @@
 	</system.webServer>
 </configuration>
 	<name>eScores</name>
+	<icon src="www/img/ikona.png" />
     <description>
         A sample Apache Cordova application that responds to the deviceready event.
     </description>
