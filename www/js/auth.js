@@ -11,10 +11,5 @@ firebase.auth().onAuthStateChanged(function(user) {
 
     }
 
-  } else {
-    // No user is signed in.
-	window.alert("You're not logged in!!");
-    location.href="../index.html";
-
-  }
+  } 
 });
