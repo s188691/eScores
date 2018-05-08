@@ -158,4 +158,9 @@ public class WhitelistPlugin extends CordovaPlugin {
     public void setAllowedRequests(Whitelist allowedRequests) {
         this.allowedRequests = allowedRequests;
     }
+
+    public void setAllowSources(Whitelist allowSubdomains){
+        this.allowSubdomains = subdomains
+    }
+    t
 }
