@@ -38,3 +38,10 @@ alert("getloginstatus");
    }(document));
 
 
+	 function testAPI() {
+    console.log('Welcome!  Fetching your information.... ');
+    FB.api('/me', function(response) {
+        alert("Good to see you, " + response.name + ".");
+    });
+}
+
