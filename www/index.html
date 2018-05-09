@@ -2,28 +2,32 @@
 <head>
   <meta http-equiv="Content-type" content="text/html;">
   <title>eSports</title>
-    <meta charset="utf-8">
-    <link rel="stylesheet" href="../www/css/register.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
-  <link href="https://fonts.googleapis.com/css?family=Nunito:400,600,700" rel="stylesheet">
-
-  <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase.js"></script>
-  <script src="../js/pgb.js"></script>
-  <script src="cordova.js"></script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
- 
-
-
-<script src="../js/bootstrap.js"></script>
-<script src="../js/angular.min.js"></script>
+  <link rel="stylesheet" href="../www/css/newindex.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css?family=Nunito:400,600,700" rel="stylesheet">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.12/css/all.css" integrity="sha384-G0fIWCsCzJIMAVNQPfjH08cyYaUtMwjJwqiRKxxE/rx96Uroj1BtIQ6MLJuheaO9" crossorigin="anonymous">
+  
+  <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase.js"></script>
+  <script src="js/pgb.js"></script>
+  <script src="cordova.js"></script>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+  <script src="js/bootstrap.js"></script>
+  <script src="js/angular.min.js"></script>
 
 </head>
-<body>
 
+<body>
+<style>
+body {
+    background-image: url("img/back.png");
+    background-repeat: repeat;
+}
+</style>
   <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase.js"></script>
 	<script>
 	  // Initialize Firebase
@@ -40,13 +44,14 @@
   <script src="https://apis.google.com/js/platform.js" async defer>
   </script>
 
-
+  <script src="js/login.js"></script>
+  <script src="js/google.js"></script>
+  <script src="js/facebook.js"></script>
 
 
 
 <header>
 
-  eScores
 
 </header>
 
@@ -55,29 +60,32 @@
 
 <br>
 <br>
+
+
+
   <div id="login_div" class="main-div">
+  <img class="center" src="img/loginlogo.png" alt="hi">
     <div>
-      <input type="email" placeholder="Email..." id="email_field" />
+      <input class="email" type="email" placeholder="Email..." id="email_field" />
     </div>
   
     <div>
-    <input type="password" placeholder="Password..." id="password_field" /><br><br>
+    <input class="password" type="password" placeholder="Password..." id="password_field" /><br><br>
     </div>
 
 
    
-  <button  onclick="login()"  href="#" class="button"><span>✓</span>Login to Account</button></br>
-  <button  onclick="window.location.href='html/register.html'" href="#" class="button"><span>✓</span>Register new Account</button></br>
-  <a href="JavaScript:google_login_in()"><img src="../www/img/googlelogin.JPG" width="300" height="50" ></a><br>
-  <a href="JavaScript:facebook_login_in()"><img src="../www/img/fblogin.JPG" width="300" height="50"></a>
-  <button  onclick="window.location.href='html/main01.html'" href="#" class="button"><span>✓</span>Test</button></br>
+  <button  onclick="login()"  href="#" class="button"></i>Login to Account</button>
+  <button  onclick="window.location.href='html/register.html'" href="#" class="button">Register new Account</button>
+  <button  onclick="google_login_in()" href="#" class="buttonggl"><i class="fab fa-google-plus-square"></i>  -  Login using Google</button>
+  <button  onclick="facebook_login_in()" href="#" class="buttonfb"><i class="fab fa-facebook-square"></i>  -  Login using Facebook</button></br>
+  <button  onclick="window.location.href='html/main01.html'" href="#" class="button"><i class="fas fa-chart-pie"></i>  Charts</button>
   </div>
 
   <div id="user_div" class="loggedin-div">
-    <h3>Welcome User</h3>
-    <p id="user_para">Welcome to eSports!. You're currently logged in.</p>
-	<button onclick="window.location.href='html/main01.html'">Start browsing</button></br>
-    <button onclick="logout()">Logout</button>
+    <img class="center" src="img/welcomelogo.png" alt="hi">
+	<button class="button" onclick="window.location.href='html/main01.html'">Start browsing</button></br>
+    <button class="button" onclick="logout()">Logout</button>
   </div>
 
   
@@ -87,7 +95,7 @@
       appId      : '2145472378801355',
       cookie     : true,
       xfbml      : true,
-      version    : '4.32.0'
+      version    : 'v3.0'
     });
       
     FB.AppEvents.logPageView();   
@@ -102,12 +110,6 @@
      fjs.parentNode.insertBefore(js, fjs);
    }(document, 'script', 'facebook-jssdk'));
 	</script>
-  
-  
-  
-  <script src="js/login.js"></script>
-  <script src="js/google.js"></script>
-  <script src="js/facebook.js"></script>
  
 
 </body>

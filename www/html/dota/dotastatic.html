@@ -2,27 +2,36 @@
 <head>
   <meta http-equiv="Content-type" content="text/html;">
   <title>eSports</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+    
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.12/css/all.css" integrity="sha384-G0fIWCsCzJIMAVNQPfjH08cyYaUtMwjJwqiRKxxE/rx96Uroj1BtIQ6MLJuheaO9" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
   <link href="https://fonts.googleapis.com/css?family=Nunito:400,600,700" rel="stylesheet">
   <link rel="stylesheet" href="/www/css/style.css" />
+  
   <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase.js"></script>
   <script src="/www/js/pgb.js"></script>
   <script src="/www/cordova.js"></script>
-  
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
- 
-
-
-<script src="../../js/bootstrap.js"></script>
-<script src="../../js/angular.min.js"></script>
-
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+  <script src="../../js/bootstrap.js"></script>
+  <script src="../../js/angular.min.js"></script>
 
 </head>
 <body>
+<style>
+body {
+    background-image: url("../../img/back.png");
+    background-repeat: repeat;
+}
+.collapse.show {
+  visibility: visible;
+}
+</style>
+
 <script>
 	  // Initialize Firebase
 	  var config = {
@@ -35,20 +44,29 @@
 	  };
 	  firebase.initializeApp(config);
 	  console.log(firebase);
-	</script>
-<script src="https://apis.google.com/js/platform.js" async defer>
 </script>
-<script src="../../js/auth.js"></script>
+	<script src="https://apis.google.com/js/platform.js" async defer></script>
+	<script src="../../js/auth.js"></script>
 	<script src="../../js/login.js"></script>
-	<ul class="nav justify-content-center nav-pills nav-fill">
+	<ul class="nav justify-content-center navbar-light bg-light">
+		<li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          | <i class="fas fa-bars"></i> Menu 
+        </a>
+		<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="../dotamain.html">Dota</a>
+          <a class="dropdown-item" href="../leaguemain.html">League of Legends</a>
+          <a class="dropdown-item" href="../overmain.html">Overwatch</a>
+        </div>
+        </li>
 		<li class="nav-item">
-			<a class="nav-link active" href="../main01.html">Main page</a>
+			<a class="nav-link" href="../main01.html">| <i class="fas fa-home"></i> | </a>
 		</li>
 		<li class="nav-item">
-			<a class="nav-link" href="../userprofile.html">User profile</a>
+			<a class="nav-link" href="../userprofile.html">| <i class="fas fa-user"></i> | </a>
 		</li>
 		<li class="nav-item">
-			<a class="nav-link" onclick="logout()">Logout</a>
+			<a class="nav-link" onclick="logout()"> <i class="fas fa-sign-out-alt"></i> | </a>
 		</li>
 	</ul>
 
@@ -69,9 +87,7 @@ function gotNames(data) {
 	var dotanames = data.val();
 	var keys = Object.keys(dotanames);
 	var gamename = dotanames.gamename
-	var gametag = dotanames.gametag
-		//console.log(gamename, gametag);
-		document.getElementById("nazwa").innerHTML = gamename + ". " + gametag + ".";
+		document.getElementById("nazwa").innerHTML = "Game name: " + gamename + ".";
 	}
 //LEAGUES@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
  
@@ -86,35 +102,43 @@ function gotLeague(data) {
     leagues.push(leaguename);
     leagues.push(leagueurl);
 	
+	document.getElementById("liga0").innerHTML = "League name: " + leagues[0] + ". ";
+	document.getElementById("ligaurl0").innerHTML = leagues[1];
+	document.getElementById("ligaurl0").href = leagues[1];
+	document.getElementById("liga2").innerHTML = "League name: " + leagues[2] +  ".";
+	document.getElementById("ligaurl2").innerHTML = leagues[3];
+	document.getElementById("ligaurl2").href = leagues[3];
+	document.getElementById("liga4").innerHTML = "League name: " + leagues[4] +  ".";
+	document.getElementById("ligaurl4").innerHTML = leagues[5];
+	document.getElementById("ligaurl4").href = leagues[5];
+	document.getElementById("liga6").innerHTML = "League name: " + leagues[6] +  ".";
+	document.getElementById("ligaurl6").innerHTML = leagues[7];
+	document.getElementById("ligaurl6").href = leagues[7];
+	document.getElementById("liga8").innerHTML = "League name: " + leagues[8] +  ".";
+	document.getElementById("ligaurl8").innerHTML = leagues[9];
+	document.getElementById("ligaurl8").href = leagues[9];
+	document.getElementById("liga10").innerHTML = "League name: " + leagues[10] +  ".";
+	document.getElementById("ligaurl10").innerHTML = leagues[11];
+	document.getElementById("ligaurl10").href = leagues[11];
+	document.getElementById("liga12").innerHTML = "League name: " + leagues[12] +  ".";
+	document.getElementById("ligaurl12").innerHTML = leagues[13];
+	document.getElementById("ligaurl12").href = leagues[13];
+	document.getElementById("liga14").innerHTML = "League name: " + leagues[14] +  ".";
+	document.getElementById("ligaurl14").innerHTML = leagues[15];
+	document.getElementById("ligaurl14").href = leagues[15];
+	document.getElementById("liga16").innerHTML = "League name: " + leagues[16] +  ".";
+	document.getElementById("ligaurl16").innerHTML = leagues[17];
+	document.getElementById("ligaurl16").href = leagues[17];
+	document.getElementById("liga18").innerHTML = "League name: " + leagues[18] +  ".";
+	document.getElementById("ligaurl18").innerHTML = leagues[19];
+	document.getElementById("ligaurl18").href = leagues[19];
+	document.getElementById("liga20").innerHTML = "League name:: " + leagues[20] +  ".";
+	document.getElementById("ligaurl20").innerHTML = leagues[21];
+	document.getElementById("ligaurl20").href = leagues[21];
+	document.getElementById("liga22").innerHTML = "League name: " + leagues[22] +  ".";
+	document.getElementById("ligaurl22").innerHTML = leagues[23];
+	document.getElementById("ligaurl22").href = leagues[23];
 	
-	//console.log(leagues);
-	//console.log(leagues[0]);
-	//document.getElementById("ligi").innerHTML = leagues;
-	
-	document.getElementById("liga0").innerHTML = "Nazwa ligi: " + leagues[0] + ".";
-	document.getElementById("liga2").innerHTML = "Nazwa ligi: " + leagues[2] +  ".";
-	document.getElementById("liga4").innerHTML = "Nazwa ligi: " + leagues[4] +  ".";
-	document.getElementById("liga6").innerHTML = "Nazwa ligi: " + leagues[6] +  ".";
-	document.getElementById("liga8").innerHTML = "Nazwa ligi: " + leagues[8] +  ".";
-	document.getElementById("liga10").innerHTML = "Nazwa ligi: " + leagues[10] +  ".";
-	document.getElementById("liga12").innerHTML = "Nazwa ligi: " + leagues[12] +  ".";
-	document.getElementById("liga14").innerHTML = "Nazwa ligi: " + leagues[14] +  ".";
-	document.getElementById("liga16").innerHTML = "Nazwa ligi: " + leagues[16] +  ".";
-	document.getElementById("liga18").innerHTML = "Nazwa ligi: " + leagues[18] +  ".";
-	document.getElementById("liga20").innerHTML = "Nazwa ligi: " + leagues[20] +  ".";
-	document.getElementById("liga22").innerHTML = "Nazwa ligi: " + leagues[22] +  ".";
-	document.getElementById("ligaurl0").innerHTML = "Url: " + leagues[1] + ".";
-	document.getElementById("ligaurl2").innerHTML = "Url: " + leagues[3] + ".";
-	document.getElementById("ligaurl4").innerHTML = "Url: " + leagues[5] + ".";
-	document.getElementById("ligaurl6").innerHTML = "Url: " + leagues[7] + ".";
-	document.getElementById("ligaurl8").innerHTML = "Url: " + leagues[9] + ".";
-	document.getElementById("ligaurl10").innerHTML = "Url: " + leagues[11] + ".";
-	document.getElementById("ligaurl12").innerHTML = "Url: " + leagues[13] + ".";
-	document.getElementById("ligaurl14").innerHTML = "Url: " + leagues[15] + ".";
-	document.getElementById("ligaurl16").innerHTML = "Url: " + leagues[17] + ".";
-	document.getElementById("ligaurl18").innerHTML = "Url: " + leagues[19] + ".";
-	document.getElementById("ligaurl20").innerHTML = "Url: " + leagues[21] + ".";
-	document.getElementById("ligaurl22").innerHTML = "Url: " + leagues[23] + ".";
 }
 
 for (var leaguenumber = 1; leaguenumber < 13; leaguenumber++) {
@@ -139,22 +163,20 @@ function gotTeam(data) {
 	teams.push(teamacronym);
 				   
 				   
-	//console.log(teams);
-	//console.log(teams[0]);
 	//document.getElementById("teamy").innerHTML = teams;
 	//for (var k = 0; k < 50; k+2) {
 	//document.getElementById("team" + k).innerHTML = "Nazwa drużyny: " + teams[k] + ". Akronim: " + teams[k+1] + ".";
 	//}
-	document.getElementById("team0").innerHTML = "Nazwa drużyny: " + teams[0] + ". Akronim: " + teams[1] + ".";
-	document.getElementById("team1").innerHTML = "Nazwa drużyny: " + teams[2] + ". Akronim: " + teams[3] + ".";
-	document.getElementById("team2").innerHTML = "Nazwa drużyny: " + teams[4] + ". Akronim: " + teams[5] + ".";
-	document.getElementById("team3").innerHTML = "Nazwa drużyny: " + teams[6] + ". Akronim: " + teams[7] + ".";
-	document.getElementById("team4").innerHTML = "Nazwa drużyny: " + teams[8] + ". Akronim: " + teams[9] + ".";
-	document.getElementById("team5").innerHTML = "Nazwa drużyny: " + teams[10] + ". Akronim: " + teams[11] + ".";
-	document.getElementById("team6").innerHTML = "Nazwa drużyny: " + teams[12] + ". Akronim: " + teams[13] + ".";
-	document.getElementById("team7").innerHTML = "Nazwa drużyny: " + teams[14] + ". Akronim: " + teams[15] + ".";
-	document.getElementById("team8").innerHTML = "Nazwa drużyny: " + teams[16] + ". Akronim: " + teams[17] + ".";
-	document.getElementById("team9").innerHTML = "Nazwa drużyny: " + teams[18] + ". Akronim: " + teams[19] + ".";
+	document.getElementById("team0").innerHTML = "Team name: " + teams[0] + ". Acronym: " + teams[1] + ".";
+	document.getElementById("team1").innerHTML = "Team name: " + teams[2] + ". Acronym: " + teams[3] + ".";
+	document.getElementById("team2").innerHTML = "Team name: " + teams[4] + ". Acronym: " + teams[5] + ".";
+	document.getElementById("team3").innerHTML = "Team name: " + teams[6] + ". Acronym: " + teams[7] + ".";
+	document.getElementById("team4").innerHTML = "Team name: " + teams[8] + ". Acronym: " + teams[9] + ".";
+	document.getElementById("team5").innerHTML = "Team name: " + teams[10] + ". Acronym: " + teams[11] + ".";
+	document.getElementById("team6").innerHTML = "Team name: " + teams[12] + ". Acronym: " + teams[13] + ".";
+	document.getElementById("team7").innerHTML = "Team name: " + teams[14] + ". Acronym: " + teams[15] + ".";
+	document.getElementById("team8").innerHTML = "Team name: " + teams[16] + ". Acronym: " + teams[17] + ".";
+	document.getElementById("team9").innerHTML = "Team name: " + teams[18] + ". Acronym: " + teams[19] + ".";
 
 	}			
 	for (var teamnumber = 0; teamnumber < 10; teamnumber++) {
@@ -172,22 +194,16 @@ var players = [];
 		var playername = dotaplayers.name;
 		players.push(playername);
 		
-								  
-								  
-		//console.log(players);
-		//console.log(teams[0]);
-		//document.getElementById("teamy").innerHTML = teams;
-		
-		document.getElementById("graczeteam1").innerHTML = "Gracze drużyny: " + players[0] + ", " + players[1] + ", " + players[2] + ", " + players[3] + ", " + players[4] + ".";
-		document.getElementById("graczeteam2").innerHTML = "Gracze drużyny: " + players[5] + ", " + players[6] + ", " + players[7] + ", " + players[8] + ", " + players[9] + ".";
-		document.getElementById("graczeteam3").innerHTML = "Gracze drużyny: " + players[10] + ", " + players[11] + ", " + players[12] + ", " + players[13] + ", " + players[14] + ".";
-		document.getElementById("graczeteam4").innerHTML = "Gracze drużyny: " + players[15] + ", " + players[16] + ", " + players[17] + ", " + players[18] + ", " + players[19] + ".";
-		document.getElementById("graczeteam5").innerHTML = "Gracze drużyny: " + players[20] + ", " + players[21] + ", " + players[22] + ", " + players[23] + ", " + players[24] + ".";
-		document.getElementById("graczeteam6").innerHTML = "Gracze drużyny: " + players[25] + ", " + players[26] + ", " + players[27] + ", " + players[28] + ", " + players[29] + ".";
-		document.getElementById("graczeteam7").innerHTML = "Gracze drużyny: " + players[30] + ", " + players[31] + ", " + players[32] + ", " + players[33] + ", " + players[34] + ".";
-		document.getElementById("graczeteam8").innerHTML = "Gracze drużyny: " + players[35] + ", " + players[36] + ", " + players[37] + ", " + players[38] + ", " + players[39] + ".";
-		document.getElementById("graczeteam9").innerHTML = "Gracze drużyny: " + players[40] + ".";
-		document.getElementById("graczeteam10").innerHTML = "Gracze drużyny: " + players[41] + ", " + players[42] + ", " + players[43] + ", " + players[44] + ", " + players[45] + ".";
+		document.getElementById("graczeteam1").innerHTML = "Players: " + players[0] + ", " + players[1] + ", " + players[2] + ", " + players[3] + ", " + players[4] + ".";
+		document.getElementById("graczeteam2").innerHTML = "Players: " + players[5] + ", " + players[6] + ", " + players[7] + ", " + players[8] + ", " + players[9] + ".";
+		document.getElementById("graczeteam3").innerHTML = "Players: " + players[10] + ", " + players[11] + ", " + players[12] + ", " + players[13] + ", " + players[14] + ".";
+		document.getElementById("graczeteam4").innerHTML = "Players: " + players[15] + ", " + players[16] + ", " + players[17] + ", " + players[18] + ", " + players[19] + ".";
+		document.getElementById("graczeteam5").innerHTML = "Players: " + players[20] + ", " + players[21] + ", " + players[22] + ", " + players[23] + ", " + players[24] + ".";
+		document.getElementById("graczeteam6").innerHTML = "Players: " + players[25] + ", " + players[26] + ", " + players[27] + ", " + players[28] + ", " + players[29] + ".";
+		document.getElementById("graczeteam7").innerHTML = "Players: " + players[30] + ", " + players[31] + ", " + players[32] + ", " + players[33] + ", " + players[34] + ".";
+		document.getElementById("graczeteam8").innerHTML = "Players: " + players[35] + ", " + players[36] + ", " + players[37] + ", " + players[38] + ", " + players[39] + ".";
+		document.getElementById("graczeteam9").innerHTML = "Players: " + players[40] + ".";
+		document.getElementById("graczeteam10").innerHTML = "Players: " + players[41] + ", " + players[42] + ", " + players[43] + ", " + players[44] + ", " + players[45] + ".";
 
 
 		}
@@ -211,194 +227,110 @@ function errData(err) {
     console.log('Error!');
     console.log(err);
 }
-//DROPDOWN Initialize@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-$('.dropdown-toggle').dropdown('toggle')
 </script>
 
-<div><H1>Nazwa gry oraz jej tag:</h1></div>
-<div id="nazwa"></div></br>
+<ul class="list-group">
+  <li class="list-group-item"><div id="nazwa"></div></li>
+</ul>
+<div id="accordion">
+  <div class="card">
+    <div class="card-header" id="headingOne">
+      <h5 class="mb-0">
+        <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+          Leagues
+        </button>
+      </h5>
+    </div>
 
+    <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
+      <div class="card-body">
+	  
+		<ul class="list-group">
+			<li class="list-group-item"><div id="liga0"></div><a id="ligaurl0" href=""></a></li>
+		</ul>
+		<ul class="list-group">
+			<li class="list-group-item"><div id="liga2"></div><a id="ligaurl2" href=""></a></li>
+		</ul>
+		<ul class="list-group">
+			<li class="list-group-item"><div id="liga4"></div><a id="ligaurl4" href=""></a></li>
+		</ul>
+		<ul class="list-group">
+			<li class="list-group-item"><div id="liga6"></div><a id="ligaurl6" href=""></a></li>
+		</ul>
+		<ul class="list-group">
+			<li class="list-group-item"><div id="liga8"></div><a id="ligaurl8" href=""></a></li>
+		</ul>
+		<ul class="list-group">
+			<li class="list-group-item"><div id="liga10"></div><a id="ligaurl10" href=""></a></li>
+		</ul>
+		<ul class="list-group">
+			<li class="list-group-item"><div id="liga12"></div><a id="ligaurl12" href=""></a></li>
+		</ul>
+		<ul class="list-group">
+			<li class="list-group-item"><div id="liga14"></div><a id="ligaurl14" href=""></a></li>
+		</ul>
+		<ul class="list-group">
+			<li class="list-group-item"><div id="liga16"></div><a id="ligaurl16" href=""></a></li>
+		</ul>
+		<ul class="list-group">
+			<li class="list-group-item"><div id="liga18"></div><a id="ligaurl18" href=""></a></li>
+		</ul>
+		<ul class="list-group">
+			<li class="list-group-item"><div id="liga20"></div><a id="ligaurl20" href=""></a></li>
+		</ul>
+		<ul class="list-group">
+			<li class="list-group-item"><div id="liga22"></div><a id="ligaurl22" href=""></a></li>
+		</ul>
+	  
+      </div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-header" id="headingTwo">
+      <h5 class="mb-0">
+        <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+          Teams
+        </button>
+      </h5>
+    </div>
+    <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+      <div class="card-body">
+	  
+		<ul class="list-group">
+			<li class="list-group-item"><div id="team0"></div><a id="graczeteam1"></a></li>
+		</ul>
+		<ul class="list-group">
+			<li class="list-group-item"><div id="team1"></div><a id="graczeteam2"></a></li>
+		</ul>
+		<ul class="list-group">
+			<li class="list-group-item"><div id="team2"></div><a id="graczeteam3"></a></li>
+		</ul>
+		<ul class="list-group">
+			<li class="list-group-item"><div id="team3"></div><a id="graczeteam4"></a></li>
+		</ul>
+		<ul class="list-group">
+			<li class="list-group-item"><div id="team4"></div><a id="graczeteam5"></a></li>
+		</ul>
+		<ul class="list-group">
+			<li class="list-group-item"><div id="team5"></div><a id="graczeteam6"></a></li>
+		</ul>
+		<ul class="list-group">
+			<li class="list-group-item"><div id="team6"></div><a id="graczeteam7"></a></li>
+		</ul>
+		<ul class="list-group">
+			<li class="list-group-item"><div id="team7"></div><a id="graczeteam8"></a></li>
+		</ul>
+		<ul class="list-group">
+			<li class="list-group-item"><div id="team8"></div><a id="graczeteam9"></a></li>
+		</ul>
+		<ul class="list-group">
+			<li class="list-group-item"><div id="team9"></div><a id="graczeteam10"></a></li>
+		</ul>
+	  
+      </div>
+    </div>
+  </div>
 
-<div><h1>Ligi gry wraz z odnośnikami do stron ligowych</h1></div>
-<div class="dropdown">
-  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-    <div id="liga0"></div>
-  </button>
-  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-    <a class="dropdown-item" href="http://liquipedia.net/dota2/Elimination_Mode/3"><p id="ligaurl0"></p></p></a>
-  </div>
-</div></br>
-<div class="dropdown">
-  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-    <div id="liga2"></div>
-  </button>
-  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-    <a class="dropdown-item" href="http://liquipedia.net/dota2/The_International"><p id="ligaurl2"></p></p></a>
-  </div>
-</div></br>
-<div class="dropdown">
-  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-    <div id="liga4"></div>
-  </button>
-  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-    <a class="dropdown-item" href="http://liquipedia.net/dota2/Perfect_World_Masters/2017"><p id="ligaurl4"></p></p></a>
-  </div>
-</div></br>
-<div class="dropdown">
-  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-    <div id="liga6"></div>
-  </button>
-  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-    <a class="dropdown-item" href="http://liquipedia.net/dota2/ESL_One"><p id="ligaurl6"></p></p></a>
-  </div>
-</div></br>
-<div class="dropdown">
-  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-    <div id="liga8"></div>
-  </button>
-  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-    <a class="dropdown-item" href="http://liquipedia.net/dota2/Mr._Cat_Invitational"><p id="ligaurl8"></p></p></a>
-  </div>
-</div></br>
-<div class="dropdown">
-  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-    <div id="liga10"></div>
-  </button>
-  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-    <a class="dropdown-item" href="http://liquipedia.net/dota2/Blood_in_the_Streets/1"><p id="ligaurl10"></p></p></a>
-  </div>
-</div></br>
-<div class="dropdown">
-  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-    <div id="liga12"></div>
-  </button>
-  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-    <a class="dropdown-item" href="http://liquipedia.net/dota2/Betway_Arena/King_of_the_Hill/1"><p id="ligaurl12"></p></p></a>
-  </div>
-</div></br>
-<div class="dropdown">
-  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-    <div id="liga14"></div>
-  </button>
-  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-    <a class="dropdown-item" href="http://liquipedia.net/dota2/ROG_MASTERS/2017"><p id="ligaurl14"></p></p></a>
-  </div>
-</div></br>
-<div class="dropdown">
-  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-    <div id="liga16"></div>
-  </button>
-  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-    <a class="dropdown-item" href="http://liquipedia.net/dota2/WePlay_Dota2_League/Season_3"><p id="ligaurl16"></p></p></a>
-  </div>
-</div></br>
-<div class="dropdown">
-  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-    <div id="liga18"></div>
-  </button>
-  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-    <a class="dropdown-item" href="http://liquipedia.net/dota2/World_Electronic_Sports_Games/2017"><p id="ligaurl18"></p></p></a>
-  </div>
-</div></br>
-<div class="dropdown">
-  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-    <div id="liga20"></div>
-  </button>
-  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-    <a class="dropdown-item" href="http://liquipedia.net/dota2/The_Final_Match/Season_1"><p id="ligaurl20"></p></p></a>
-  </div>
-</div></br>
-<div class="dropdown">
-  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-    <div id="liga22"></div>
-  </button>
-  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-    <a class="dropdown-item" href="http://liquipedia.net/dota2/Game_Show_Global_eSports_Cup/1"><p id="ligaurl22"></p></p></a>
-  </div>
-</div></br>
-
-
-<div><h1>Drużyny wraz z ich graczami</h1></div>
-<div class="dropdown">
-  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-    <div id="team0"></div>
-  </button>
-  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-    <a class="dropdown-item"><p id="graczeteam1"></p></a>
-  </div>
-</div></br>
-<div class="dropdown">
-  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-    <div id="team1"></div>
-  </button>
-  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-    <a class="dropdown-item"><p id="graczeteam2"></p></a>
-  </div>
-</div></br>
-<div class="dropdown">
-  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-    <div id="team2"></div>
-  </button>
-  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-    <a class="dropdown-item"><p id="graczeteam3"></p></a>
-  </div>
-</div></br>
-<div class="dropdown">
-  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-    <div id="team3"></div>
-  </button>
-  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-    <a class="dropdown-item"><p id="graczeteam4"></p></a>
-  </div>
-</div></br>
-<div class="dropdown">
-  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-    <div id="team4"></div>
-  </button>
-  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-    <a class="dropdown-item"><p id="graczeteam5"></p></a>
-  </div>
-</div></br>
-<div class="dropdown">
-  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-    <div id="team5"></div>
-  </button>
-  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-    <a class="dropdown-item"><p id="graczeteam6"></p></a>
-  </div>
-</div></br>
-<div class="dropdown">
-  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-    <div id="team6"></div>
-  </button>
-  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-    <a class="dropdown-item"><p id="graczeteam7"></p></a>
-  </div>
-</div></br>
-<div class="dropdown">
-  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-    <div id="team7"></div>
-  </button>
-  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-    <a class="dropdown-item"><p id="graczeteam8"></p></a>
-  </div>
-</div></br>
-<div class="dropdown">
-  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-    <div id="team8"></div>
-  </button>
-  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-    <a class="dropdown-item"><p id="graczeteam9"></p></a>
-  </div>
-</div></br>
-<div class="dropdown">
-  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-    <div id="team9"></div>
-  </button>
-  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-    <a class="dropdown-item"><p id="graczeteam10"></p></a>
-  </div>
-</div></br>
 
 </body>
 </html>

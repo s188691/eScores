@@ -2,24 +2,31 @@
 <head>
   <meta http-equiv="Content-type" content="text/html;">
   <title>eSports</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+    
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.12/css/all.css" integrity="sha384-G0fIWCsCzJIMAVNQPfjH08cyYaUtMwjJwqiRKxxE/rx96Uroj1BtIQ6MLJuheaO9" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
   <link href="https://fonts.googleapis.com/css?family=Nunito:400,600,700" rel="stylesheet">
   <link rel="stylesheet" href="/www/css/style.css" />
+  
   <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase.js"></script>
   <script src="/www/js/pgb.js"></script>
   <script src="/www/cordova.js"></script>
-  
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
- 
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+  <script src="../../js/bootstrap.js"></script>
+  <script src="../../js/angular.min.js"></script>
 
-
-<script src="../../js/bootstrap.js"></script>
-<script src="../../js/angular.min.js"></script>
 </head>
+<style>
+body {
+    background-image: url("../../img/back.png");
+    background-repeat: repeat;
+}
+</style>
 
 <body>
 	<script src="https://www.gstatic.com/firebasejs/4.12.1/firebase.js"></script>
@@ -38,15 +45,30 @@
 	<script src="https://apis.google.com/js/platform.js" async defer></script>
 	<script src="../../js/auth.js"></script>
 	<script src="../../js/login.js"></script>
-	<ul class="nav justify-content-center nav-pills nav-fill">
+	<ul class="nav justify-content-center navbar-light bg-light">
+		<li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          | <i class="fas fa-bars"></i> Menu 
+        </a>
+		<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="../dotamain.html">Dota</a>
+          <a class="dropdown-item" href="../leaguemain.html">League of Legends</a>
+          <a class="dropdown-item" href="../overmain.html">Overwatch</a>
+		  <div class="dropdown-divider"></div>
+		  <a class="dropdown-item" onclick="downloadupcoming()" href="#">Upcoming games</a>
+		  <a class="dropdown-item" onclick="downloadrunning()" href="#">Live games</a>
+		  <a class="dropdown-item" onclick="downloadpast()" href="#">Past games</a>
+		  <a class="dropdown-item" onclick="clearBox()" href="#">Clear table</a>
+        </div>
+        </li>
 		<li class="nav-item">
-			<a class="nav-link active" href="../main01.html">Main page</a>
+			<a class="nav-link" href="../main01.html">| <i class="fas fa-home"></i> | </a>
 		</li>
 		<li class="nav-item">
-			<a class="nav-link" href="../userprofile.html">User profile</a>
+			<a class="nav-link" href="../userprofile.html">| <i class="fas fa-user"></i> | </a>
 		</li>
 		<li class="nav-item">
-			<a class="nav-link" onclick="logout()">Logout</a>
+			<a class="nav-link" onclick="logout()"> <i class="fas fa-sign-out-alt"></i> | </a>
 		</li>
 	</ul>
 	
@@ -89,8 +111,12 @@ function downloadupcoming() {
 	
 	for ( var numergry = 0; numergry < 9; numergry++) {
 	document.getElementById("gamename" + numergry).innerHTML = "Mecz: " + ourData[numergry].name;
-	document.getElementById("begin_at" + numergry).innerHTML = "Data i godzina rozpoczęcia: " + ourData[numergry].begin_at;
+	document.getElementById("oponents" + numergry).innerHTML = "Team 1: " + ourData[numergry].opponents[0].opponent.name + " vs. Team 2: " + ourData[numergry].opponents[1].opponent.name;
+	var begin_date = ourData[numergry].begin_at.slice(0, 10);
+	var begin_time = ourData[numergry].begin_at.slice(11, 16);
+	document.getElementById("begin_at" + numergry).innerHTML = "Data rozpoczęcia: " + begin_date + ". Godzina: " + begin_time + " GMT.";
 	document.getElementById("number_of_games" + numergry).innerHTML = "Ilość gier: " + ourData[numergry].number_of_games;
+	document.getElementById("results" + numergry).innerHTML = ourData[numergry].opponents[0].opponent.name + ": " + ourData[numergry].results[0].score + " - " + ourData[numergry].results[1].score + "   :" + ourData[numergry].opponents[1].opponent.name;
 	document.getElementById("league" + numergry).innerHTML = "Liga: " + ourData[numergry].league.name;
 	document.getElementById("serie" + numergry).innerHTML = "seria: " + ourData[numergry].serie.full_name;
 	}
@@ -125,8 +151,12 @@ function downloadrunning() {
 	
 	for ( var numergry = 0; numergry < 9; numergry++) {
 	document.getElementById("gamename" + numergry).innerHTML = "Mecz: " + ourData[numergry].name;
-	document.getElementById("begin_at" + numergry).innerHTML = "Data i godzina rozpoczęcia: " + ourData[numergry].begin_at;
+	document.getElementById("oponents" + numergry).innerHTML = "Team 1: " + ourData[numergry].opponents[0].opponent.name + " vs. Team 2: " + ourData[numergry].opponents[1].opponent.name;
+	var begin_date = ourData[numergry].begin_at.slice(0, 10);
+	var begin_time = ourData[numergry].begin_at.slice(11, 16);
+	document.getElementById("begin_at" + numergry).innerHTML = "Data rozpoczęcia: " + begin_date + ". Godzina: " + begin_time + " GMT.";
 	document.getElementById("number_of_games" + numergry).innerHTML = "Ilość gier: " + ourData[numergry].number_of_games;
+	document.getElementById("results" + numergry).innerHTML = ourData[numergry].opponents[0].opponent.name + ": " + ourData[numergry].results[0].score + " - " + ourData[numergry].results[1].score + "   :" + ourData[numergry].opponents[1].opponent.name;
 	document.getElementById("league" + numergry).innerHTML = "Liga: " + ourData[numergry].league.name;
 	document.getElementById("serie" + numergry).innerHTML = "seria: " + ourData[numergry].serie.full_name;
 	}
@@ -161,8 +191,12 @@ function downloadpast() {
 	
 	for ( var numergry = 0; numergry < 9; numergry++) {
 	document.getElementById("gamename" + numergry).innerHTML = "Mecz: " + ourData[numergry].name;
-	document.getElementById("begin_at" + numergry).innerHTML = "Data i godzina rozpoczęcia: " + ourData[numergry].begin_at;
+	document.getElementById("oponents" + numergry).innerHTML = "Team 1: " + ourData[numergry].opponents[0].opponent.name + " vs. Team 2: " + ourData[numergry].opponents[1].opponent.name;
+	var begin_date = ourData[numergry].begin_at.slice(0, 10);
+	var begin_time = ourData[numergry].begin_at.slice(11, 16);
+	document.getElementById("begin_at" + numergry).innerHTML = "Data rozpoczęcia: " + begin_date + ". Godzina: " + begin_time + " GMT.";
 	document.getElementById("number_of_games" + numergry).innerHTML = "Ilość gier: " + ourData[numergry].number_of_games;
+	document.getElementById("results" + numergry).innerHTML = ourData[numergry].opponents[0].opponent.name + ": " + ourData[numergry].results[0].score + " - " + ourData[numergry].results[1].score + "   :" + ourData[numergry].opponents[1].opponent.name;
 	document.getElementById("league" + numergry).innerHTML = "Liga: " + ourData[numergry].league.name;
 	document.getElementById("serie" + numergry).innerHTML = "seria: " + ourData[numergry].serie.full_name;
 	document.getElementById("winner" + numergry).innerHTML = "Zwycięzca: " + ourData[numergry].winner.name;
@@ -184,8 +218,10 @@ function clearBox()
 {
     for ( var numergry = 0; numergry < 9; numergry++) {
 	document.getElementById("gamename" + numergry).innerHTML = "";
+	document.getElementById("oponents" + numergry).innerHTML = "";
 	document.getElementById("begin_at" + numergry).innerHTML = "";
 	document.getElementById("number_of_games" + numergry).innerHTML = "";
+	document.getElementById("results" + numergry).innerHTML = "";
 	document.getElementById("league" + numergry).innerHTML = "";
 	document.getElementById("serie" + numergry).innerHTML = "";
 	document.getElementById("winner" + numergry).innerHTML = "";
@@ -196,89 +232,33 @@ function clearBox()
 </script>
 
 
+<ul class="list-group">
+  <li class="list-group-item">Use menu button to navigate through matches (Use "clear table" option every time you switch maches to avoid complications)</li>
+</ul>
 
-<div class="btn-group" role="group" aria-label="Basic example">
-  <button type="button" class="btn btn-secondary" onclick="downloadupcoming()">Mecze nadchodzące</button>
-  <button type="button" class="btn btn-secondary" onclick="downloadrunning()">Mecze live</button>
-  <button type="button" class="btn btn-secondary" onclick="downloadpast()">Mecze zakończone</button>
-  <button type="button" class="btn btn-secondary" onclick="clearBox()">Wyczyść tabele</button>
-</div>
+<ul class="list-group">
+  <li class="list-group-item"><div id="gamename0"></div><div id="oponents0"></div><div id="begin_at0"></div><div id="number_of_games0"></div><div id="results0"></div><div id="league0"></div><div id="serie0"></div><div id="winner0"></div></li>
+  <li class="list-group-item"></li>
+  <li class="list-group-item"><div id="gamename1"></div><div id="oponents1"></div><div id="begin_at1"></div><div id="number_of_games1"></div><div id="results1"></div><div id="league1"></div><div id="serie1"></div><div id="winner1"></div></li>
+  <li class="list-group-item"></li>
+  <li class="list-group-item"><div id="gamename2"></div><div id="oponents2"></div><div id="begin_at2"></div><div id="number_of_games2"></div><div id="results2"></div><div id="league2"></div><div id="serie2"></div><div id="winner2"></div></li>
+  <li class="list-group-item"></li>
+  <li class="list-group-item"><div id="gamename3"></div><div id="oponents3"></div><div id="begin_at3"></div><div id="number_of_games3"></div><div id="results3"></div><div id="league3"></div><div id="serie3"></div><div id="winner3"></div></li>
+  <li class="list-group-item"></li>
+  <li class="list-group-item"><div id="gamename4"></div><div id="oponents4"></div><div id="begin_at4"></div><div id="number_of_games4"></div><div id="results4"></div><div id="league4"></div><div id="serie4"></div><div id="winner4"></div></li>
+  <li class="list-group-item"></li>
+  <li class="list-group-item"><div id="gamename5"></div><div id="oponents5"></div><div id="begin_at5"></div><div id="number_of_games5"></div><div id="results5"></div><div id="league5"></div><div id="serie5"></div><div id="winner5"></div></li>
+  <li class="list-group-item"></li>
+  <li class="list-group-item"><div id="gamename6"></div><div id="oponents6"></div><div id="begin_at6"></div><div id="number_of_games6"></div><div id="results6"></div><div id="league6"></div><div id="serie6"></div><div id="winner6"></div></li>
+  <li class="list-group-item"></li>
+  <li class="list-group-item"><div id="gamename7"></div><div id="oponents7"></div><div id="begin_at7"></div><div id="number_of_games7"></div><div id="results7"></div><div id="league7"></div><div id="serie7"></div><div id="winner7"></div></li>
+  <li class="list-group-item"></li>
+  <li class="list-group-item"><div id="gamename8"></div><div id="oponents8"></div><div id="begin_at8"></div><div id="number_of_games8"></div><div id="results8"></div><div id="league8"></div><div id="serie8"></div><div id="winner8"></div></li>
+  <li class="list-group-item"></li>
+  <li class="list-group-item"><div id="gamename9"></div><div id="oponents9"></div><div id="begin_at9"></div><div id="number_of_games9"></div><div id="results9"></div><div id="league9"></div><div id="serie9"></div><div id="winner9"></div></li>
+  <li class="list-group-item"></li>
 
-
-		<div id="gamename0"></div>
-		<div id="begin_at0"></div>
-		<div id="number_of_games0"></div>
-		<div id="league0"></div>
-		<div id="serie0"></div>
-		<div id="winner0"></div></br>
-
-
-		<div id="gamename1"></div>
-		<div id="begin_at1"></div>
-		<div id="number_of_games1"></div>
-		<div id="league1"></div>
-		<div id="serie1"></div>
-		<div id="winner1"></div></br>
-
-		<div id="gamename2"></div>
-		<div id="begin_at2"></div>
-		<div id="number_of_games2"></div>
-		<div id="league2"></div>
-		<div id="serie2"></div>
-		<div id="winner2"></div></br>
-
-		<div id="gamename3"></div>
-		<div id="begin_at3"></div>
-		<div id="number_of_games3"></div>
-		<div id="league3"></div>
-		<div id="serie3"></div>
-		<div id="winner3"></div></br>
-
-		<div id="gamename4"></div>
-		<div id="begin_at4"></div>
-		<div id="number_of_games4"></div>
-		<div id="league4"></div>
-		<div id="serie4"></div>
-		<div id="winner4"></div></br>
-
-		<div id="gamename5"></div>
-		<div id="begin_at5"></div>
-		<div id="number_of_games5"></div>
-		<div id="league5"></div>
-		<div id="serie5"></div>
-		<div id="winner5"></div></br>
-
-		<div id="gamename6"></div>
-		<div id="begin_at6"></div>
-		<div id="number_of_games6"></div>
-		<div id="league6"></div>
-		<div id="serie6"></div>
-		<div id="winner6"></div></br>
-
-		<div id="gamename7"></div>
-		<div id="begin_at7"></div>
-		<div id="number_of_games7"></div>
-		<div id="league7"></div>
-		<div id="serie7"></div>
-		<div id="winner7"></div></br>
-
-		<div id="gamename8"></div>
-		<div id="begin_at8"></div>
-		<div id="number_of_games8"></div>
-		<div id="league8"></div>
-		<div id="serie8"></div>
-		<div id="winner9"></div></br>
-
-		<div id="gamename9"></div>
-		<div id="begin_at9"></div>
-		<div id="number_of_games9"></div>
-		<div id="league9"></div>
-		<div id="serie9"></div>
-		<div id="winner0"></div></br>
-
-
-	
- 
+</ul>
 
 </body>
 </html>
