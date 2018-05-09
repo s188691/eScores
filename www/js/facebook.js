@@ -18,5 +18,32 @@ function facebook_login_in(){
 		  var credential = error.credential;
 		  // ...
 		});
-    }
+
+firebase.auth().getRedirectResult().then(function(result) {
+  if (result.credential) {
+   
+    var token = result.credential.accessToken;
+  
+    var user = result.user;
+  
+  }
+}).catch(function(error) {
+  // Handle Errors here.
+  var errorCode = error.code;
+  var errorMessage = error.message;
+  alert(errorMessage);
+});
+
+
+		
+}
+(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = 'https://connect.facebook.net/pl_PL/sdk.js#xfbml=1&version=v3.0&appId=2145472378801355&autoLogAppEvents=1';
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));                       
+
+
 
