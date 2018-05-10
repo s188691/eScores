@@ -54,9 +54,9 @@ Prototyp aplikacji został stworzony w aplikacji inVISION
 
 **Przykładowe ekrany:**
 
-!(https://raw.githubusercontent.com/s188691/eScores/master/www/img/prototyp/1.png)
+!(https://raw.githubusercontent.com/s188691/eScores/master/www/img/prototyp/1.PNG)
 
-!(https://raw.githubusercontent.com/s188691/eScores/master/www/img/prottyp/5.png)
+https://raw.githubusercontent.com/s188691/eScores/master/www/img/prototyp/5.PNG
 
 https://raw.githubusercontent.com/s188691/eScores/master/www/img/prototyp/2.png
 
