@@ -9,7 +9,7 @@
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.12/css/all.css" integrity="sha384-G0fIWCsCzJIMAVNQPfjH08cyYaUtMwjJwqiRKxxE/rx96Uroj1BtIQ6MLJuheaO9" crossorigin="anonymous">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
   <link href="https://fonts.googleapis.com/css?family=Nunito:400,600,700" rel="stylesheet">
-  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="stylesheet" href="../css/newindex.css" />
   <link rel="stylesheet" href="../css/slicknav.css" />
   <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/2.5.1/firebaseui.css" />
   
@@ -48,6 +48,54 @@ body {
 </script>
 <script src="../js/auth.js"></script>
 <script src="../js/login.js"></script>
+<ul class="nav justify-content-center navbar-light bg-light">
+		<li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          | <i class="fas fa-bars"></i>  
+        </a>
+		<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="dotamain.html">Dota</a>
+          <a class="dropdown-item" href="leaguemain.html">League of Legends</a>
+          <a class="dropdown-item" href="overmain.html">Overwatch</a>
+        </div>
+        </li>
+		<li class="nav-item">
+			<a class="nav-link" href="main01.html"> | <i class="fas fa-home"></i> | </a>
+		</li>
+		<li class="nav-item">
+			<a class="nav-link" href="userprofile.html"> | <i class="fas fa-user"></i> | </a>
+		</li>
+		<li class="nav-item">
+			<a class="nav-link" onclick="logout()">  <i class="fas fa-sign-out-alt"></i> | </a>
+		</li>
+	</ul>
+
+
+<div id="dp"></div>
+<div id="username"></div>
+<!-- src="../img/user.png" -->
+<div class="card mx-auto" style="width: 300px;">
+  <img class="card-img-top" src="../img/user.png" alt="Card image cap">
+  <div class="card-body">
+    <h5 class="card-title"><p>Name: </p><p id="imie"></p></h5>
+    <p class="card-text"><p>Email: </p><p id="email"></p></p>
+    <button class="btn btn-primary" onclick="logout()">Logout</button>
+  </div>
+</div></br></br>
+	
+	
+	
+<div class="alert alert-info">
+  <strong>Info!</strong> You can change your username down below.
+</div>
+<div>
+<input class="email" type="text" placeholder="User..." id="userchangename" />
+</div>  
+<button  onclick="ChangeName();window.location.reload();"  href="#" class="button"></i>Change</button>
+	
+	
+	
+	
 
 <script>
 	
@@ -79,45 +127,38 @@ firebase.auth().onAuthStateChanged(function(user) {
   }
 });
 
+function ChangeName() {
 
+  var user = firebase.auth().currentUser;
+  var userchangename = document.getElementById("userchangename").value;
+  
+  user.updateProfile({
+  displayName: userchangename,
+	}).then(function() {
 
+	var displayName = user.displayName;
+	var photoURL = user.photoURL;
+
+	console.log("  Name: " + user.displayName);
+    console.log("  Email: " + user.email);
 	
+	}, function(error) {
+  // An error happened.
+});
+}
+  
+
+
 
 
 
 </script>
 
-	<ul class="nav justify-content-center navbar-light bg-light">
-		<li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          | <i class="fas fa-bars"></i>  
-        </a>
-		<div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="dotamain.html">Dota</a>
-          <a class="dropdown-item" href="leaguemain.html">League of Legends</a>
-          <a class="dropdown-item" href="overmain.html">Overwatch</a>
-        </div>
-        </li>
-		<li class="nav-item">
-			<a class="nav-link" href="main01.html"> | <i class="fas fa-home"></i> | </a>
-		</li>
-		<li class="nav-item">
-			<a class="nav-link" href="userprofile.html"> | <i class="fas fa-user"></i> | </a>
-		</li>
-		<li class="nav-item">
-			<a class="nav-link" onclick="logout()">  <i class="fas fa-sign-out-alt"></i> | </a>
-		</li>
-	</ul>
 
 
-<div class="card mx-auto" style="width: 300px;">
-  <img class="card-img-top" src="../img/user.png" alt="Card image cap">
-  <div class="card-body">
-    <h5 class="card-title"><p>Name: </p><p id="imie"></p></h5>
-    <p class="card-text"><p>Email: </p><p id="email"></p></p>
-    <button class="btn btn-primary" onclick="logout()">Logout</button>
-  </div>
-</div>
+
+
+
 
 
 </body>
