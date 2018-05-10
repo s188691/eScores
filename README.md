@@ -11,12 +11,14 @@
 3. Zespół projektowy
 4. Linki
 
+
 -----------------------------------------
 
 ### Opis aplikacji: ###
 
 
 Aplikacja pozwala na przeglądanie aktualnych wiadomości oraz bieżących jak i zakończonych już wydarzeń eSportowych.
+
 
 -----------------------------------------
 
@@ -37,6 +39,7 @@ Aplikacja pozwala na przeglądanie aktualnych wiadomości oraz bieżących jak i
 
     Powiadomienia o nadchodzących wydarzeniach w dziedzinie e-sportu
 
+
 -----------------------------------------
 
 ### Prototyp aplikacji: ###
@@ -44,7 +47,9 @@ Aplikacja pozwala na przeglądanie aktualnych wiadomości oraz bieżących jak i
 
 Prototyp aplikacji został stworzony w aplikacji inVISION
 
+
 [PROTOTYP](https://projects.invisionapp.com/share/FBIEAK2JG6U#/screens/296212767)
+
 
 
 **Przykładowe ekrany:**
@@ -54,6 +59,7 @@ Prototyp aplikacji został stworzony w aplikacji inVISION
 !(/www/img/prototyp/2.png)
 !(/www/img/prototyp/3.png)
 !(/www/img/prototyp/4.png)
+
 
 -----------------------------------------
 
@@ -68,6 +74,7 @@ Prototyp aplikacji został stworzony w aplikacji inVISION
 
 * Kamil Szmit, 188388, KrDUIs1011
 
+
 -----------------------------------------
 
 ### Linki: ###
@@ -76,6 +83,7 @@ Prototyp aplikacji został stworzony w aplikacji inVISION
 [Link do repozytorium projektu](https://github.com/s188691/eScores)
 
 [Link do systemu zarządzania projektem](https://trello.com/b/KcZCUdFc/escores-tab)
+
 
 -----------------------------------------
 
