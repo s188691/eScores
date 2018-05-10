@@ -1,4 +1,4 @@
-# Welcome to eScores Page  :simple_smile: #
+# Welcome to eScores Page  :) #
 
 
 
@@ -49,7 +49,7 @@ Prototyp aplikacji został stworzony w aplikacji inVISION
 
 **Przykładowe ekrany:**
 
-!(/www/img/prototyp/1.png)
+!(./www/img/prototyp/1.png)
 !(/www/img/prototyp/5.png)
 !(/www/img/prototyp/2.png)
 !(/www/img/prototyp/3.png)
@@ -79,10 +79,4 @@ Prototyp aplikacji został stworzony w aplikacji inVISION
 
 -----------------------------------------
 
-Aplikacja eScores powstała na potrzeby przedmiotu Bogate Aplikacje Internetowe  :iphone:
-
-
-
-
-
-
+Aplikacja eScores powstała na potrzeby przedmiotu Bogate Aplikacje Internetowe
