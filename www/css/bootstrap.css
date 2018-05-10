@@ -4332,6 +4332,7 @@ input[type="button"].btn-block {
 }
 
 .card {
+  color: white;
   position: relative;
   display: -ms-flexbox;
   display: flex;
@@ -4340,8 +4341,9 @@ input[type="button"].btn-block {
   min-width: 0;
   word-wrap: break-word;
   background-color: #fff;
-  background-clip: border-box;
-  border: 1px solid rgba(0, 0, 0, 0.125);
+  background-image:url(../img/back.png); 
+
+  border: 0px solid rgba(0, 0, 0, 0.125);
   border-radius: 0.25rem;
 }
 
@@ -4362,7 +4364,7 @@ input[type="button"].btn-block {
 
 .card-body {
   -ms-flex: 1 1 auto;
-  flex: 1 1 auto;
+  flex: 1 1 50%;
   padding: 1.25rem;
 }
 
