@@ -9,7 +9,7 @@
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.12/css/all.css" integrity="sha384-G0fIWCsCzJIMAVNQPfjH08cyYaUtMwjJwqiRKxxE/rx96Uroj1BtIQ6MLJuheaO9" crossorigin="anonymous">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
   <link href="https://fonts.googleapis.com/css?family=Nunito:400,600,700" rel="stylesheet">
-  <link rel="stylesheet" href="/www/css/style.css" />
+  <link rel="stylesheet" href="/www/css/bootstrap.css" />
   
   <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase.js"></script>
   <script src="/www/js/pgb.js"></script>
@@ -90,7 +90,7 @@ function gotNames(data) {
 	var keys = Object.keys(ovnames);
 	var gamename = ovnames.gamename
 		//console.log(gamename, gametag);
-		document.getElementById("nazwa").innerHTML = "Game name: " + gamename + ".";
+		document.getElementById("nazwa").innerHTML = "<center><b> <h1>" + gamename + ".</h1></b></center>";
 	}
 //LEAGUES@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
  
@@ -105,10 +105,10 @@ function gotLeague(data) {
     leagues.push(leaguename);
     leagues.push(leagueurl);
 	
-	document.getElementById("liga0").innerHTML = "League name: " + leagues[0] + ". ";
+	document.getElementById("liga0").innerHTML = "<b>" + leagues[0] + ".</b> ";
 	document.getElementById("ligaurl0").innerHTML = leagues[1];
 	document.getElementById("ligaurl0").href = leagues[1];
-	document.getElementById("liga2").innerHTML = "League name: " + leagues[2] +  ".";
+	document.getElementById("liga2").innerHTML = "<b>" + leagues[2] +  ".</b>";
 	document.getElementById("ligaurl2").innerHTML = leagues[3];
 	document.getElementById("ligaurl2").href = leagues[3];
 
@@ -142,16 +142,16 @@ function gotTeam(data) {
 	//for (var k = 0; k < 50; k+2) {
 	//document.getElementById("team" + k).innerHTML = "Nazwa drużyny: " + teams[k] + ". Akronim: " + teams[k+1] + ".";
 	//}
-	document.getElementById("team0").innerHTML = "Team name: " + teams[0] + ". Acronym: " + teams[1] + ".";
-	document.getElementById("team1").innerHTML = "Team name: " + teams[2] + ". Acronym: " + teams[3] + ".";
-	document.getElementById("team2").innerHTML = "Team name: " + teams[4] + ". Acronym: " + teams[5] + ".";
-	document.getElementById("team3").innerHTML = "Team name: " + teams[6] + ". Acronym: " + teams[7] + ".";
-	document.getElementById("team4").innerHTML = "Team name: " + teams[8] + ". Acronym: " + teams[9] + ".";
-	document.getElementById("team5").innerHTML = "Team name: " + teams[10] + ". Acronym: " + teams[11] + ".";
-	document.getElementById("team6").innerHTML = "Team name: " + teams[12] + ". Acronym: " + teams[13] + ".";
-	document.getElementById("team7").innerHTML = "Team name: " + teams[14] + ". Acronym: " + teams[15] + ".";
-	document.getElementById("team8").innerHTML = "Team name: " + teams[16] + ". Acronym: " + teams[17] + ".";
-	document.getElementById("team9").innerHTML = "Team name: " + teams[18] + ". Acronym: " + teams[19] + ".";
+	document.getElementById("team0").innerHTML = "<b> " + teams[0] + ". Acronym: " + teams[1] + ".</b>";
+	document.getElementById("team1").innerHTML = "<b> " + teams[2] + ". Acronym: " + teams[3] + ".</b>";
+	document.getElementById("team2").innerHTML = "<b> " + teams[4] + ". Acronym: " + teams[5] + ".</b>";
+	document.getElementById("team3").innerHTML = "<b> " + teams[6] + ". Acronym: " + teams[7] + ".</b>";
+	document.getElementById("team4").innerHTML = "<b> " + teams[8] + ". Acronym: " + teams[9] + ".</b>";
+	document.getElementById("team5").innerHTML = "<b> " + teams[10] + ". Acronym: " + teams[11] + ".</b>";
+	document.getElementById("team6").innerHTML = "<b> " + teams[12] + ". Acronym: " + teams[13] + ".</b>";
+	document.getElementById("team7").innerHTML = "<b> " + teams[14] + ". Acronym: " + teams[15] + ".</b>";
+	document.getElementById("team8").innerHTML = "<b> " + teams[16] + ". Acronym: " + teams[17] + ".</b>";
+	document.getElementById("team9").innerHTML = "<b> " + teams[18] + ". Acronym: " + teams[19] + ".</b>";
 	
 	}			
 	for (var teamnumber = 0; teamnumber < 10; teamnumber++) {
@@ -217,11 +217,11 @@ function errData(err) {
 <div id="accordion">
   <div class="card">
     <div class="card-header" id="headingOne">
-      <h5 class="mb-0">
+      <h2 class="mb-0">
         <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
           Leagues
         </button>
-      </h5>
+      </h2>
     </div>
 
     <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
@@ -238,11 +238,11 @@ function errData(err) {
   </div>
   <div class="card">
     <div class="card-header" id="headingTwo">
-      <h5 class="mb-0">
+      <h2 class="mb-0">
         <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
           Teams
         </button>
-      </h5>
+      </h2>
     </div>
     <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
       <div class="card-body">

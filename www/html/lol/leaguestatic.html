@@ -9,7 +9,7 @@
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.12/css/all.css" integrity="sha384-G0fIWCsCzJIMAVNQPfjH08cyYaUtMwjJwqiRKxxE/rx96Uroj1BtIQ6MLJuheaO9" crossorigin="anonymous">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
   <link href="https://fonts.googleapis.com/css?family=Nunito:400,600,700" rel="stylesheet">
-  <link rel="stylesheet" href="/www/css/style.css" />
+  <link rel="stylesheet" href="/www/css/bootstrap.css" />
   
   <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase.js"></script>
   <script src="/www/js/pgb.js"></script>
@@ -88,7 +88,7 @@ function gotNames(data) {
 	var lolnames = data.val();
 	var keys = Object.keys(lolnames);
 	var gamename = lolnames.gamename
-		document.getElementById("nazwa").innerHTML = "Game name: " + gamename + ".";
+		document.getElementById("nazwa").innerHTML = "<center><b> <h1>" + gamename + ".</b></center>";
 	}
 //LEAGUES@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
  
@@ -104,40 +104,40 @@ function gotLeague(data) {
     leagues.push(leagueurl);
 	
 	
-	document.getElementById("liga0").innerHTML = "League name: " + leagues[0] + ". ";
+	document.getElementById("liga0").innerHTML = "<b>" + leagues[0] + ".</b> ";
 	document.getElementById("ligaurl0").innerHTML = leagues[1];
 	document.getElementById("ligaurl0").href = leagues[1];
-	document.getElementById("liga2").innerHTML = "League name: " + leagues[2] +  ".";
+	document.getElementById("liga2").innerHTML = "<b> " + leagues[2] +  ".</b>";
 	document.getElementById("ligaurl2").innerHTML = leagues[3];
 	document.getElementById("ligaurl2").href = leagues[3];
-	document.getElementById("liga4").innerHTML = "League name: " + leagues[4] +  ".";
+	document.getElementById("liga4").innerHTML = "<b> " + leagues[4] +  ".</b>";
 	document.getElementById("ligaurl4").innerHTML = leagues[5];
 	document.getElementById("ligaurl4").href = leagues[5];
-	document.getElementById("liga6").innerHTML = "League name: " + leagues[6] +  ".";
+	document.getElementById("liga6").innerHTML = "<b> " + leagues[6] +  ".</b>";
 	document.getElementById("ligaurl6").innerHTML = leagues[7];
 	document.getElementById("ligaurl6").href = leagues[7];
-	document.getElementById("liga8").innerHTML = "League name: " + leagues[8] +  ".";
+	document.getElementById("liga8").innerHTML = "<b> " + leagues[8] +  ".</b>";
 	document.getElementById("ligaurl8").innerHTML = leagues[9];
 	document.getElementById("ligaurl8").href = leagues[9];
-	document.getElementById("liga10").innerHTML = "League name: " + leagues[10] +  ".";
+	document.getElementById("liga10").innerHTML = "<b> " + leagues[10] +  ".</b>";
 	document.getElementById("ligaurl10").innerHTML = leagues[11];
 	document.getElementById("ligaurl10").href = leagues[11];
-	document.getElementById("liga12").innerHTML = "League name: " + leagues[12] +  ".";
+	document.getElementById("liga12").innerHTML = "<b> " + leagues[12] +  ".</b>";
 	document.getElementById("ligaurl12").innerHTML = leagues[13];
 	document.getElementById("ligaurl12").href = leagues[13];
-	document.getElementById("liga14").innerHTML = "League name: " + leagues[14] +  ".";
+	document.getElementById("liga14").innerHTML = "<b> " + leagues[14] +  ".</b>";
 	document.getElementById("ligaurl14").innerHTML = leagues[15];
 	document.getElementById("ligaurl14").href = leagues[15];
-	document.getElementById("liga16").innerHTML = "League name: " + leagues[16] +  ".";
+	document.getElementById("liga16").innerHTML = "<b> " + leagues[16] +  ".</b>";
 	document.getElementById("ligaurl16").innerHTML = leagues[17];
 	document.getElementById("ligaurl16").href = leagues[17];
-	document.getElementById("liga18").innerHTML = "League name: " + leagues[18] +  ".";
+	document.getElementById("liga18").innerHTML = "<b> " + leagues[18] +  ".</b>";
 	document.getElementById("ligaurl18").innerHTML = leagues[19];
 	document.getElementById("ligaurl18").href = leagues[19];
-	document.getElementById("liga20").innerHTML = "League name:: " + leagues[20] +  ".";
+	document.getElementById("liga20").innerHTML = "<b> " + leagues[20] +  ".</b>";
 	document.getElementById("ligaurl20").innerHTML = leagues[21];
 	document.getElementById("ligaurl20").href = leagues[21];
-	document.getElementById("liga22").innerHTML = "League name: " + leagues[22] +  ".";
+	document.getElementById("liga22").innerHTML = "<b> " + leagues[22] +  ".</b>";
 	document.getElementById("ligaurl22").innerHTML = leagues[23];
 	document.getElementById("ligaurl22").href = leagues[23];
 }
@@ -244,11 +244,11 @@ function errData(err) {
 <div id="accordion">
   <div class="card">
     <div class="card-header" id="headingOne">
-      <h5 class="mb-0">
+      <h2 class="mb-0">
         <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
           Leagues
         </button>
-      </h5>
+      </h2>
     </div>
 
     <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
@@ -296,11 +296,11 @@ function errData(err) {
   </div>
   <div class="card">
     <div class="card-header" id="headingTwo">
-      <h5 class="mb-0">
+      <h2 class="mb-0">
         <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
           Teams
         </button>
-      </h5>
+      </h2>
     </div>
     <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
       <div class="card-body">
