@@ -4340,8 +4340,9 @@ input[type="button"].btn-block {
   flex-direction: column;
   min-width: 0;
   word-wrap: break-word;
-  background-color: #fff;
-  background-image:url(../img/back.png); 
+  background-image: url(../img/back.png);
+  /* background: linear-gradient(to right,#14143B,white,#14143B); */
+ 
 
   border: 0px solid rgba(0, 0, 0, 0.125);
   border-radius: 0.25rem;
