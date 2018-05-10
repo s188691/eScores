@@ -9,7 +9,7 @@
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.12/css/all.css" integrity="sha384-G0fIWCsCzJIMAVNQPfjH08cyYaUtMwjJwqiRKxxE/rx96Uroj1BtIQ6MLJuheaO9" crossorigin="anonymous">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
   <link href="https://fonts.googleapis.com/css?family=Nunito:400,600,700" rel="stylesheet">
-  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="stylesheet" href="../css/newindex.css" />
   <link rel="stylesheet" href="../css/slicknav.css" />
   <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/2.5.1/firebaseui.css" />
   
@@ -74,7 +74,10 @@ body {
 
 	
 	
-	<canvas id="myChart"></canvas>
+	<canvas id="myChartone"></canvas>
+	<canvas id="myChartonedot"></canvas>
+	<canvas id="myCharttwo"></canvas>
+	<canvas id="myCharttwodot"></canvas>
 	
 	
 	
@@ -83,9 +86,15 @@ body {
 <script>
 //LEAGUES DOTA@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 var database = firebase.database();
-var iloscdota;
-var ilosclol;
-var iloscover;
+var iloscligdota;
+var iloscliglol;
+var iloscligover;
+var iloscgraczydota;
+var iloscgraczylol;
+var iloscgraczyover;
+
+
+
 var leaguesdota = [];
                
 function gotLeaguedota(data) {
@@ -96,7 +105,7 @@ function gotLeaguedota(data) {
     var leagueurl = dotaleague.leagueurl;
     leaguesdota.push(leaguename);
     leaguesdota.push(leagueurl);
-	iloscdota = leaguesdota.length/2;;
+	iloscligdota = leaguesdota.length/2;;
 	
 	
 }
@@ -116,7 +125,7 @@ function gotLeaguelol(data) {
     var leagueurl = lolleague.leagueurl;
     leagueslol.push(leaguename);
     leagueslol.push(leagueurl);
-	ilosclol = leagueslol.length/2;;
+	iloscliglol = leagueslol.length/2;;
 }
 for (var leaguenumber = 1; leaguenumber < 13; leaguenumber++) {
     database.ref('videogame1/leagues/league' + leaguenumber).on('value', gotLeaguelol, errData);
@@ -132,43 +141,21 @@ function gotLeagueov(data) {
     var leagueurl = ovleague.leagueurl;
     leaguesover.push(leaguename);
     leaguesover.push(leagueurl);
-	iloscover = leaguesover.length/2;
+	iloscligover = leaguesover.length/2;
 }
 for (var leaguenumber = 1; leaguenumber < 3; leaguenumber++) {
     database.ref('videogame3/leagues/league' + leaguenumber).on('value', gotLeagueov, errData);
-}
-
-//TEAMS@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-
-var teams = [];
-               
-function gotTeam(data) {
-				
-	var dotateam = data.val();
-	var keys = Object.keys(dotateam);
-	var teamname = dotateam.name;
-	var teamacronym = dotateam.acronym;
-	teams.push(teamname);
-	teams.push(teamacronym);
-}
-for (var teamnumber = 0; teamnumber < 10; teamnumber++) {
-		database.ref('videogame2/teams/' + teamnumber).on('value', gotTeam, errData);
 }
 //ERRORS@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 function errData(err) {
     console.log('Error!');
     console.log(err);
 }
-
-
+//LEAGUECHART@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 function chartone() {
-	
-	console.log(window.iloscdota);
-	console.log(window.ilosclol);
-	console.log(window.iloscover);
 
 	
-	var ctx = document.getElementById('myChart').getContext('2d');
+	var ctx = document.getElementById('myChartone').getContext('2d');
 	var chart = new Chart(ctx, {
     // The type of chart we want to create
     type: 'line',
@@ -178,9 +165,9 @@ function chartone() {
         labels: ["Dota leagues", "LoL leagues", "Overwatch leagues"],
         datasets: [{
             label: "Number of leagues for each game",
-            backgroundColor: 'rgb(255, 99, 132)',
+            
             borderColor: 'rgb(255, 99, 132)',
-            data: [window.iloscdota, window.ilosclol, window.iloscover],
+            data: [window.iloscligdota, window.iloscliglol, window.iloscligover],
         }]
     },
 
@@ -188,13 +175,173 @@ function chartone() {
     options: {}
 });
 }
-	
-</script>
-  
-  <button  onclick="chartone()">Leagues</button>
+
+
+//PLAYERS@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+
+var playersdota = [];
+               
+	function gotPlayersdota(data) {
+							   
+		var dotaplayers = data.val();
+		var keys = Object.keys(dotaplayers);
+		var playername = dotaplayers.name;
+		playersdota.push(playername);
+		iloscgraczydota = playersdota.length;
+		
+}	
+for (var playernumber = 0; playernumber < 5; playernumber++) {
+			database.ref('videogame2/teams/0/players/' + playernumber).on('value', gotPlayersdota, errData);
+			database.ref('videogame2/teams/1/players/' + playernumber).on('value', gotPlayersdota, errData);
+			database.ref('videogame2/teams/2/players/' + playernumber).on('value', gotPlayersdota, errData);
+			database.ref('videogame2/teams/3/players/' + playernumber).on('value', gotPlayersdota, errData);
+			database.ref('videogame2/teams/4/players/' + playernumber).on('value', gotPlayersdota, errData);
+			database.ref('videogame2/teams/5/players/' + playernumber).on('value', gotPlayersdota, errData);
+			database.ref('videogame2/teams/6/players/' + playernumber).on('value', gotPlayersdota, errData);
+			database.ref('videogame2/teams/7/players/' + playernumber).on('value', gotPlayersdota, errData);
+			database.ref('videogame2/teams/8/players/' + playernumber).on('value', gotPlayersdota, errData);
+			database.ref('videogame2/teams/9/players/' + playernumber).on('value', gotPlayersdota, errData);
+}
+
+var playerslol = [];
+               
+	function gotPlayerslol(data) {
+							   
+		var lolplayers = data.val();
+		var keys = Object.keys(lolplayers);
+		var playername = lolplayers.name;
+		playerslol.push(playername);
+		iloscgraczylol = playerslol.length;
+}
+for (var playernumber = 0; playernumber < 5; playernumber++) {
+			database.ref('videogame1/teams/0/players/' + playernumber).on('value', gotPlayerslol, errData);
+			database.ref('videogame1/teams/1/players/' + playernumber).on('value', gotPlayerslol, errData);
+			database.ref('videogame1/teams/2/players/' + playernumber).on('value', gotPlayerslol, errData);
+			database.ref('videogame1/teams/3/players/' + playernumber).on('value', gotPlayerslol, errData);
+			database.ref('videogame1/teams/4/players/' + playernumber).on('value', gotPlayerslol, errData);
+			database.ref('videogame1/teams/5/players/' + playernumber).on('value', gotPlayerslol, errData);
+			database.ref('videogame1/teams/6/players/' + playernumber).on('value', gotPlayerslol, errData);
+			database.ref('videogame1/teams/7/players/' + playernumber).on('value', gotPlayerslol, errData);
+			database.ref('videogame1/teams/8/players/' + playernumber).on('value', gotPlayerslol, errData);
+			database.ref('videogame1/teams/9/players/' + playernumber).on('value', gotPlayerslol, errData);
+}
+
+
+var playersover = [];
+               
+	function gotPlayersover(data) {
+							   
+		var overplayers = data.val();
+		var keys = Object.keys(overplayers);
+		var playername = overplayers.name;
+		playersover.push(playername);
+		iloscgraczyover = playersover.length;
+}
+for (var playernumber = 0; playernumber < 6; playernumber++) {
+			database.ref('videogame3/teams/0/players/' + playernumber).on('value', gotPlayersover, errData);
+			database.ref('videogame3/teams/1/players/' + playernumber).on('value', gotPlayersover, errData);
+			database.ref('videogame3/teams/2/players/' + playernumber).on('value', gotPlayersover, errData);
+			database.ref('videogame3/teams/3/players/' + playernumber).on('value', gotPlayersover, errData);
+			database.ref('videogame3/teams/4/players/' + playernumber).on('value', gotPlayersover, errData);
+			database.ref('videogame3/teams/5/players/' + playernumber).on('value', gotPlayersover, errData);
+			database.ref('videogame3/teams/6/players/' + playernumber).on('value', gotPlayersover, errData);
+			database.ref('videogame3/teams/7/players/' + playernumber).on('value', gotPlayersover, errData);
+			database.ref('videogame3/teams/8/players/' + playernumber).on('value', gotPlayersover, errData);
+			database.ref('videogame3/teams/9/players/' + playernumber).on('value', gotPlayersover, errData);
+}
+
+
+function charttwo() {
 
 	
+	var ctx = document.getElementById('myCharttwo').getContext('2d');
+	var chart = new Chart(ctx, {
+    // The type of chart we want to create
+    type: 'line',
+
+    // The data for our dataset
+    data: {
+        labels: ["Dota players", "LoL players", "Overwatch players"],
+        datasets: [{
+            label: "Number of players for each game",
+            
+            borderColor: 'rgba(220,220,220,0.8)',
+            data: [window.iloscgraczydota, window.iloscgraczylol, window.iloscgraczyover],
+        }]
+    },
+
+    // Configuration options go here
+    options: {}
+});
+}
+
+
+
+function chartonedot() {
 	
+	
+	var ctx = document.getElementById('myChartonedot').getContext('2d');
+	var chart = new Chart(ctx, {
+    // The type of chart we want to create
+    type: 'line',
+
+    // The data for our dataset
+    data: {
+        labels: ["Dota leagues", "LoL leagues", "Overwatch leagues"],
+        datasets: [{
+            label: "Number of overall leagues for each game",
+            
+            borderColor: 'rgb(255, 99, 132)',
+            data: [903, 2036, 559],
+        }]
+    },
+
+    // Configuration options go here
+    options: {}
+});
+}
+
+
+function charttwodot() {
+	
+
+	var ctx = document.getElementById('myCharttwodot').getContext('2d');
+	var chart = new Chart(ctx, {
+    // The type of chart we want to create
+    type: 'line',
+
+    // The data for our dataset
+    data: {
+        labels: ["Dota players", "LoL players", "Overwatch players"],
+        datasets: [{
+            label: "Number of players overall for each game in 2016",
+            
+            borderColor: 'rgba(220,220,220,0.8)',
+            data: [13000000, 100000000, 35000000],
+        }]
+    },
+
+    // Configuration options go here
+    options: {}
+});
+}
+
+
+
+	
+</script>
+<div class="alert alert-info">
+  <strong>Info!</strong> Data from firebase was shortened because of optimisation reasons. To check real numbers click correspond buttons
+</div>
+<div class="container">
+  <div class="row">
+	<button  onclick="chartone()" class="button">Leagues from firebase</button>
+	<button  onclick="chartonedot()" class="button">Leagues real numbers</button>
+	<button  onclick="charttwo()" class="button">Players from firebase</button>
+	<button  onclick="charttwodot()" class="button">Players real numbers</button>
+  </div>
+</div>
+
 	
 	
 
