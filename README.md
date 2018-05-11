@@ -87,7 +87,7 @@ Prototyp aplikacji został stworzony w aplikacji inVISION
 
 [Link do repozytorium projektu](https://github.com/s188691/eScores)
 
-[Link do systemu zarządzania projektem](https://trello.com/b/KcZCUdFc/escores-tab)
+[Link do systemu zarządzania projektem](https://trello.com/projektbai)
 
 [Link do arkusza z podziałem pracy](https://docs.google.com/spreadsheets/d/1d3j6Yb1gyDw_gzPamG57-NRPLjIeKwpw6gwuZ5YF6Yk/edit?usp=sharing)
 
