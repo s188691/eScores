@@ -227,13 +227,14 @@ function clearBox()
 	document.getElementById("winner" + numergry).innerHTML = "";
 }};
 
+var snd = new Audio("../mario.wav");
 
 	
 </script>
 
 
 <div style="background:white;" >
-    <img style="margin-left:5%;" src="../tip.png" width="4%" height="4%" alt="tip!" /> <b> Use menu button to navigate through matches (Use "clear table" option every time you switch maches to avoid complications)</b>
+    <img onclick="snd.play()" style="margin-left:5%;" src="../tip.png" width="4%" height="4%" alt="tip!" /> <b> Use menu button to navigate through matches (Use "clear table" option every time you switch maches to avoid complications)</b>
   </div>
 
 <ul class="list-group">
