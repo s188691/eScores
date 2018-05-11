@@ -1,3 +1,8 @@
+<img src="https://raw.githubusercontent.com/s188691/eScores/master/www/img/logo.png">
+
+
+
+
 # Welcome to eScores Page  :) #
 
 
@@ -26,18 +31,18 @@ Aplikacja pozwala na przeglądanie aktualnych wiadomości oraz bieżących jak i
 
 
     Konta użytkowników
+    
+    Rejestracja i logowanie tradycyjne
 
-    Logowanie za pomocą facebooka oraz google+
+    Logowanie za pomocą Facebooka oraz Google+, Twittera, Github
+    
+    Krótka informacja o danej grze
 
-    Możliwość ogólnego przeglądania tabeli skróconych wiadomości oraz meczy
+    Możliwość ogólnego przeglądania wiadomości oraz meczy
 
-    Możliwość spersonalizowania skróconych wiadomości do jednego rodzaju rozgrywek
-
-    Możliwość przeglądania każdej wiadomości oraz rozgrywki w pełnym osobnym formacie
-
-    Opcja przeglądania rozgrywki zapewnia informacje o wynikach drużyn oraz zawodnikach każdej drużyny
-
-    Powiadomienia o nadchodzących wydarzeniach w dziedzinie e-sportu
+    Możliwość uzyskania informacji o wynikach drużyn oraz o zawodnikach każdej drużyny
+    
+    Możliwość zobaczenia wykresów
 
 
 -----------------------------------------
@@ -83,6 +88,8 @@ Prototyp aplikacji został stworzony w aplikacji inVISION
 [Link do repozytorium projektu](https://github.com/s188691/eScores)
 
 [Link do systemu zarządzania projektem](https://trello.com/b/KcZCUdFc/escores-tab)
+
+[Link do arkusza z podziałem pracy](https://docs.google.com/spreadsheets/d/1d3j6Yb1gyDw_gzPamG57-NRPLjIeKwpw6gwuZ5YF6Yk/edit?usp=sharing)
 
 
 -----------------------------------------
