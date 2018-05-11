@@ -4,4 +4,7 @@
   <string name="facebook_login_protocol_scheme" translatable="false">fbesports-login</string>
   <string name="facebook_app_id">1277289015736327</string>
 <string name="fb_login_protocol_scheme">fb1277289015736327</string>
+
+<!-- Zapasowy protocol_scheme, do testów>
+<string name2='fb_login_protocol_scheme2'>fb1271527773632890</string> -->
 </resources>

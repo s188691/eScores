@@ -9,7 +9,7 @@
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.12/css/all.css" integrity="sha384-G0fIWCsCzJIMAVNQPfjH08cyYaUtMwjJwqiRKxxE/rx96Uroj1BtIQ6MLJuheaO9" crossorigin="anonymous">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
   <link href="https://fonts.googleapis.com/css?family=Nunito:400,600,700" rel="stylesheet">
-  <link rel="stylesheet" href="/www/css/style.css" />
+  <link rel="stylesheet" href="/www/css/bootstrap.css" />
   
   <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase.js"></script>
   <script src="/www/js/pgb.js"></script>
@@ -190,16 +190,16 @@ function downloadpast() {
 	console.log(ourData);
 	
 	for ( var numergry = 0; numergry < 9; numergry++) {
-	document.getElementById("gamename" + numergry).innerHTML = "Mecz: " + ourData[numergry].name;
-	document.getElementById("oponents" + numergry).innerHTML = "Team 1: " + ourData[numergry].opponents[0].opponent.name + " vs. Team 2: " + ourData[numergry].opponents[1].opponent.name;
+	document.getElementById("gamename" + numergry).innerHTML = "<b>Mecz:</b>" + ourData[numergry].name;
+	document.getElementById("oponents" + numergry).innerHTML = "<b>Team 1:</b> " + ourData[numergry].opponents[0].opponent.name + " vs. Team 2: " + ourData[numergry].opponents[1].opponent.name;
 	var begin_date = ourData[numergry].begin_at.slice(0, 10);
 	var begin_time = ourData[numergry].begin_at.slice(11, 16);
-	document.getElementById("begin_at" + numergry).innerHTML = "Data rozpoczęcia: " + begin_date + ". Godzina: " + begin_time + " GMT.";
-	document.getElementById("number_of_games" + numergry).innerHTML = "Ilość gier: " + ourData[numergry].number_of_games;
+	document.getElementById("begin_at" + numergry).innerHTML = "<b>Data rozpoczęcia:</b> " + begin_date + ". Godzina: " + begin_time + " GMT.";
+	document.getElementById("number_of_games" + numergry).innerHTML = "<b>Ilość gier:</b> " + ourData[numergry].number_of_games;
 	document.getElementById("results" + numergry).innerHTML = ourData[numergry].opponents[0].opponent.name + ": " + ourData[numergry].results[0].score + " - " + ourData[numergry].results[1].score + "   :" + ourData[numergry].opponents[1].opponent.name;
-	document.getElementById("league" + numergry).innerHTML = "Liga: " + ourData[numergry].league.name;
-	document.getElementById("serie" + numergry).innerHTML = "seria: " + ourData[numergry].serie.full_name;
-	document.getElementById("winner" + numergry).innerHTML = "Zwycięzca: " + ourData[numergry].winner.name;
+	document.getElementById("league" + numergry).innerHTML = "<b>Liga:</b> " + ourData[numergry].league.name;
+	document.getElementById("serie" + numergry).innerHTML = "<b>Seria:</b> " + ourData[numergry].serie.full_name;
+	document.getElementById("winner" + numergry).innerHTML = "<b>Zwycięzca:</b> " + ourData[numergry].winner.name;
 	}
 	
 	
@@ -232,9 +232,9 @@ function clearBox()
 </script>
 
 
-<ul class="list-group">
-  <li class="list-group-item">Use menu button to navigate through matches (Use "clear table" option every time you switch maches to avoid complications)</li>
-</ul>
+<div style="background:white;" >
+  <img style="margin-left:5%;" src="../tip.png" width="4%" height="4%" alt="tip!" /> <b> Use menu button to navigate through matches (Use "clear table" option every time you switch maches to avoid complications)</b>
+</div>
 
 <ul class="list-group">
   <li class="list-group-item"><div id="gamename0"></div><div id="oponents0"></div><div id="begin_at0"></div><div id="number_of_games0"></div><div id="results0"></div><div id="league0"></div><div id="serie0"></div><div id="winner0"></div></li>
