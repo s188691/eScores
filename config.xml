@@ -37,10 +37,6 @@
         <allow-intent href="market:*" />
         <preference name="AndroidLaunchMode" value="singleTask" />
     </platform>
-    <platform name="ios">
-        <allow-intent href="itms:*" />
-        <allow-intent href="itms-apps:*" />
-    </platform>
     <universal-links>
         <host name="https://ry2x6.app.goo.gl" scheme="https" />
         <host name="esports-login.firebaseapp.com" scheme="https">
