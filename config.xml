@@ -25,6 +25,12 @@
     <access origin="*" />
     <platform name="android">
     <!-- you can use any density that exists in the Android project -->
+	<preference name="android-minSdkVersion" value="20" />
+	<preference name="android-targetSdkVersion" value="24" />      
+	<preference name="AutoHideSplashScreen" value="true" />
+	<preference name="SplashScreenDelay" value="3000" />
+	<preference name="ShowSplashScreenSpinner" value="false" />
+	<preference name="FadeSplashScreen" value="false" />
     <splash src="res/screen/android/splash-land-hdpi.png" density="land-hdpi"/>
     <splash src="res/screen/android/splash-land-ldpi.png" density="land-ldpi"/>
     <splash src="res/screen/android/splash-land-mdpi.png" density="land-mdpi"/>
