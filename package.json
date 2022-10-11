@@ -11,7 +11,7 @@
     "license": "Apache-2.0",
     "dependencies": {
         "angular": "^1.6.9",
-        "cordova-android": "^7.0.0",
+        "cordova-android": "^11.0.0",
         "cordova-plugin-browsertab": "^0.2.0",
         "cordova-plugin-buildinfo": "^2.0.1",
         "cordova-plugin-compat": "^1.2.0",
